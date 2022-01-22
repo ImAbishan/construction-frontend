@@ -10,7 +10,7 @@ import Summary from './Summary'
 
 const Stats = () => {
   return (
-    <Popup position="top right" trigger={<option>Graph</option>}>
+    <Popup position="top" trigger={<option>Graph</option>}>
       <Calculators />
     </Popup>
   );
@@ -427,10 +427,12 @@ class SimpleForm extends Component {
                 {
                   value: "predication",
                   label: "How can you help with me my Dream Projects 😃",
+                  trigger: "no-resp",
                 },
                 {
                   value: "about-tt",
                   label: "What is special about TT Builders 😊",
+                  trigger: "no-resp",
                 },
               ],
               delay: 600,
@@ -498,10 +500,10 @@ class SimpleForm extends Component {
               id: "future-question-three",
               options: [
                 { value: "House", label: "HOUSE 🏡", trigger: "house-question-one",},
-                { value: "Education", label: "EDUCATION 👨‍🎓" },
-                { value: "Vehicle", label: "VEHICLE 🚗" },
-                { value: "Wedding", label: "WEDDING 👭" },
-                { value: "Retirement", label: "RETIREMENT" },
+                { value: "Education", label: "EDUCATION 👨‍🎓" ,trigger: "no-resp",},
+                { value: "Vehicle", label: "VEHICLE 🚗",trigger: "no-resp", },
+                { value: "Wedding", label: "WEDDING 👭" ,trigger: "no-resp",},
+                { value: "Retirement", label: "RETIREMENT",trigger: "no-resp", },
               ],
               delay: 600,
             },
