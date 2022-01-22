@@ -527,11 +527,11 @@ class SimpleForm extends Component {
             {
               id: "future-question-three",
               options: [
-                { value: "house", label: "HOUSE 🏡", trigger: "house-question-one",},
-                { value: "education", label: "EDUCATION 👨‍🎓" },
-                { value: "vehicle", label: "VEHICLE 🚗" },
-                { value: "wedding", label: "WEDDING 👭" },
-                { value: "retirement", label: "RETIREMENT" },
+                { value: "House", label: "HOUSE 🏡", trigger: "house-question-one",},
+                { value: "Education", label: "EDUCATION 👨‍🎓" },
+                { value: "Vehicle", label: "VEHICLE 🚗" },
+                { value: "Wedding", label: "WEDDING 👭" },
+                { value: "Retirement", label: "RETIREMENT" },
               ],
               delay: 600,
             },
@@ -600,7 +600,7 @@ class SimpleForm extends Component {
                 }
                 return true;
               },
-              trigger: "salary-user-answer-one",
+              trigger: "annualsalary",
             },
 
             {
@@ -611,16 +611,16 @@ class SimpleForm extends Component {
                   label: "What is salary increment rate?",
                   trigger: "salary-inc",
                 },
-                { value: "skip", label: "Skip", trigger: "skip-one" },
+                { value: "skip", label: "Skip", trigger: "rate" },
               ],
               delay: 600,
             },
 
             {
-              id: "skip-one",
+              id: "annualsalary",
               message: "What is your annual salary increment rate? ",
               delay: 600,
-              trigger: "rate",
+              trigger: "salary-user-answer-one",
             },
 
             {
@@ -644,7 +644,7 @@ class SimpleForm extends Component {
               id: "salary-inc",
               component: <div> Percentage of salary increase each year </div>,
               delay: 600,
-              trigger: "salary-user-answer-one",
+              trigger: "rate",
             },
 
             {
@@ -657,7 +657,11 @@ class SimpleForm extends Component {
             {
               id: "summary-ends",
               trigger: "summary-end",
-              component: <Summary />,
+              component:
+               <div>
+                          HI
+                  
+                        </div>,
               asMessage: false,
               delay: 600,
             },
@@ -665,7 +669,7 @@ class SimpleForm extends Component {
             {
               id: "summary-end",
               message:
-                "Below is Amana LifePlanners's prediction of your economy",
+                "Below is TT Builders' Life Planners prediction of your economy",
               trigger: "summary-end-graph",
               delay: 600,
             },
