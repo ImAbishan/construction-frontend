@@ -6,10 +6,11 @@ import Popup from "reactjs-popup";
 
 import Calculators from "../Components/inside/Calculators";
 import { Modal } from "react-bootstrap";
+import Summary from './Summary'
 
-const Starts = () => {
+const Stats = () => {
   return (
-    <Popup position="top left" trigger={<option>Graph</option>}>
+    <Popup position="top" trigger={<option>Graph</option>}>
       <Calculators />
     </Popup>
   );
@@ -38,34 +39,6 @@ const config = {
   floating: true,
 };
 
-//----------  Summary page --------------
-
-class Summary extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: " ",
-      age: " ",
-      salaryanswer: " ",
-    };
-  }
-
-  componentWillMount() {
-    const { steps } = this.props;
-    const { name, age, salaryanswer } = steps;
-
-    this.setState({ name, age, salaryanswer });
-  }
-}
-
-Summary.propTypes = {
-  steps: PropTypes.object,
-};
-
-Summary.defaultProps = {
-  steps: undefined,
-};
 
 ////////---  Component class
 class SimpleForm extends Component {
@@ -454,10 +427,12 @@ class SimpleForm extends Component {
                 {
                   value: "predication",
                   label: "How can you help with me my Dream Projects 😃",
+                  trigger: "no-resp",
                 },
                 {
                   value: "about-tt",
                   label: "What is special about TT Builders 😊",
+                  trigger: "no-resp",
                 },
               ],
               delay: 600,
@@ -476,9 +451,6 @@ class SimpleForm extends Component {
               delay: 600,
               trigger: "age",
             },
-
-            //        ],
-            //     delay:600,
 
             {
               id: "age",
@@ -528,10 +500,10 @@ class SimpleForm extends Component {
               id: "future-question-three",
               options: [
                 { value: "House", label: "HOUSE 🏡", trigger: "house-question-one",},
-                { value: "Education", label: "EDUCATION 👨‍🎓" },
-                { value: "Vehicle", label: "VEHICLE 🚗" },
-                { value: "Wedding", label: "WEDDING 👭" },
-                { value: "Retirement", label: "RETIREMENT" },
+                { value: "Education", label: "EDUCATION 👨‍🎓" ,trigger: "no-resp",},
+                { value: "Vehicle", label: "VEHICLE 🚗",trigger: "no-resp", },
+                { value: "Wedding", label: "WEDDING 👭" ,trigger: "no-resp",},
+                { value: "Retirement", label: "RETIREMENT",trigger: "no-resp", },
               ],
               delay: 600,
             },
@@ -600,16 +572,30 @@ class SimpleForm extends Component {
                 }
                 return true;
               },
+              trigger: "monthlyexpenses",
+            },
+
+            {
+              id: "expensesanswer",
+              user: true,
+
+              delay: 600,
+              validator: (value) => {
+                if (isNaN(value)) {
+                  return "Expense should be a number";
+                }
+                return true;
+              },
               trigger: "annualsalary",
             },
 
             {
-              id: "salary-user-answer-one",
+              id: "salary_user_answer_one",
               options: [
                 {
                   value: "thwtissalaryincrementisyear",
                   label: "What is salary increment rate?",
-                  trigger: "salary-inc",
+                  trigger: "salaryinc",
                 },
                 { value: "skip", label: "Skip", trigger: "rate" },
               ],
@@ -620,7 +606,14 @@ class SimpleForm extends Component {
               id: "annualsalary",
               message: "What is your annual salary increment rate? ",
               delay: 600,
-              trigger: "salary-user-answer-one",
+              trigger: "salary_user_answer_one",
+            },
+
+            {
+              id: "monthlyexpenses",
+              message: "What is your monthly expense? ",
+              delay: 600,
+              trigger: "expensesanswer",
             },
 
             {
@@ -630,7 +623,7 @@ class SimpleForm extends Component {
                 if (isNaN(rate)) {
                   return "rate should be a number";
                 }
-                if (isNaN(rate) || rate > 50000) {
+                if (isNaN(rate) || rate > 100) {
                   return "Rate must be a number between 1 to 100";
                 }
                 return true;
@@ -641,7 +634,7 @@ class SimpleForm extends Component {
             },
 
             {
-              id: "salary-inc",
+              id: "salaryinc",
               component: <div> Percentage of salary increase each year </div>,
               delay: 600,
               trigger: "rate",
@@ -658,10 +651,7 @@ class SimpleForm extends Component {
               id: "summary-ends",
               trigger: "summary-end",
               component:
-               <div>
-                          HI
-                  
-                        </div>,
+                <Summary />,
               asMessage: false,
               delay: 600,
             },
@@ -678,7 +668,7 @@ class SimpleForm extends Component {
               id: "summary-end-graph",
               trigger: "summary-ends-last",
               // component: <Modal.Dialog><Calculators salaryanswer={this.state.salaryanswer} rate={this.state.rate}/> </Modal.Dialog>,
-              component: <Starts />,
+              component: <Stats />,
 
               asMessage: false,
               delay: 600,
@@ -714,7 +704,7 @@ class SimpleForm extends Component {
                   label: "Monthly income",
                   trigger: "update-income",
                 },
-                { value: "Expenses", label: "Expenses" },
+                { value: "Expenses", label: "Expenses",trigger: "update-expenses", },
               ],
               delay: 600,
             },
@@ -726,22 +716,17 @@ class SimpleForm extends Component {
               delay: 600,
             },
             {
+              id: "update-expenses",
+              update: "expensesanswer",
+              trigger: "summary-ends-que",
+              delay: 600,
+            },
+            {
               id: "end-message",
 
-              message: "Thanks! ",
+              message: "Thank you! Reach anytime😎 ",
 
               end: true,
-            },
-
-            {
-              id: "jokes-ans-two-tamil",
-              component: (
-                <div>
-                  PATIENT:- Sir I play tennis, football and cricket daily..
-                </div>
-              ),
-              delay: 2800,
-              // trigger: 'jokes-ans-three-tamil',
             },
           ]}
           {...config}
