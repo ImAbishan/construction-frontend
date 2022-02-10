@@ -1,0 +1,61 @@
+.img-main {
+  width: 1519px;
+  height: 708px;
+}
+.landing-home {
+  position: absolute;
+  padding-left: 0px;
+  padding-top: 12px;
+  top: 2px;
+  left: 100px;
+  border: none;
+}
+.landing-btn {
+  position: absolute;
+  top: 12px;
+  left: 1200px;
+}
+
+.landing-btn-signup {
+  position: absolute;
+  top: 12px;
+  left: 1350px;
+}
+
+.landing-btn-signup,
+.landing-btn {
+  width: 130px;
+  height: 40px;
+  border: none;
+  background-color: #c59d5f;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.landing-btn-signup,
+.landing-btn:hover {
+  width: 130px;
+  height: 40px;
+  border: none;
+  background-color: #fff;
+  border-radius: 30px;
+  color: #c59d5f;
+}
+
+.landing-page .title-landing {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-size: 108px;
+  top: 300px;
+  left: 480px;
+}
+
+.title-para {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-size: 34px;
+  top: 420px;
+  left: 690px;
+}

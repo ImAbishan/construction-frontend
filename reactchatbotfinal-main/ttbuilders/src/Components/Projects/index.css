@@ -234,3 +234,24 @@ Menu
     height: 150px;
   }
 }
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.btn-readmore {
+  width: 100px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: var(--clr-gold);
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-left: 200px;
+}
+
+.btn-readmore:hover {
+  background-color: #ffffff;
+  color: var(--clr-gold);
+  border: 1px solid var(--clr-gold);
+}

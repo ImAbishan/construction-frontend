@@ -1,17 +1,22 @@
 import React, { Component } from "react";
-import SimpleForm from "./componentsChat/SimpleForm";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Navbar from "./Components/NavigationBar/navbar";
-import Employees from "./Components/Employees/employee";
-import Secondary from "./Components/Projects/secondary";
+import Landing from "./Pages/LandingPage/landing.js";
+import Main from "./Pages/main.js";
+import Login from "./Pages/LoginPage/logIn";
+import SignUp from "./Pages/Signup/signUp";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Secondary />
-      <Employees />
-      <SimpleForm />
+      <Router>
+        <Switch>
+          <Route path="/" exact={true} component={Landing} />
+          <Route path="/home" component={Main} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={SignUp} />
+        </Switch>
+      </Router>
     </div>
   );
 }
