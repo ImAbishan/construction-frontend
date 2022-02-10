@@ -1,34 +1,72 @@
 import React, { Component, useState } from "react";
 import axios from "axios";
 import "../Signup/signUp.css";
+import SecondaryNavbar from "../../Components/SecondaryNavbar/secondaryNavbar";
 
 function SignUp() {
   //creaet use state hook
   const [userSignup, setUserSignup] = useState({
-    name: "",
-    email: "",
+    firstName: "",
+    lastName: "",
+    mobile: "",
+    userName: "",
     password: "",
-    cPassword: "",
+    email: "",
   });
 
   const createUserSignup = () => {
-    axios.post("http://localhost:5000/userSignup", userSignup).then(() => {
-      window.location.reload(false);
-    });
+    axios
+      .post("http://localhost:9090/api/usr-mgt/users", userSignup)
+      .then(() => {
+        window.location.reload(false);
+      });
   };
 
   return (
     <>
+      <SecondaryNavbar />
       <div class="login-page">
         <div class="form-signin">
           <form class="login-form">
             <input
               type="text"
-              value={userSignup.name}
+              value={userSignup.firstName}
               onChange={(event) => {
-                setUserSignup({ ...userSignup, name: event.target.value });
+                setUserSignup({ ...userSignup, firstName: event.target.value });
               }}
-              placeholder="Username"
+              placeholder="firstName"
+            />
+            <input
+              type="text"
+              value={userSignup.lastName}
+              onChange={(event) => {
+                setUserSignup({ ...userSignup, lastName: event.target.value });
+              }}
+              placeholder="lastName"
+            />
+            <input
+              type="text"
+              value={userSignup.mobile}
+              onChange={(event) => {
+                setUserSignup({ ...userSignup, mobile: event.target.value });
+              }}
+              placeholder="mobile"
+            />
+            <input
+              type="text"
+              value={userSignup.userName}
+              onChange={(event) => {
+                setUserSignup({ ...userSignup, userName: event.target.value });
+              }}
+              placeholder="userName"
+            />
+            <input
+              type="password"
+              value={userSignup.password}
+              onChange={(event) => {
+                setUserSignup({ ...userSignup, password: event.target.value });
+              }}
+              placeholder="password"
             />
             <input
               type="email"
@@ -38,30 +76,7 @@ function SignUp() {
               }}
               placeholder="Email"
             />
-            <input
-              type="password"
-              value={userSignup.password}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, password: event.target.value });
-              }}
-              placeholder="Password"
-            />
-            <input
-              type="password"
-              value={userSignup.cPassword}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, cPassword: event.target.value });
-              }}
-              placeholder="Conform Password"
-            />
-            <input
-              type="password"
-              value={userSignup.cPassword}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, cPassword: event.target.value });
-              }}
-              placeholder="Conform Password"
-            />
+
             <button onClick={createUserSignup} href="home.js">
               login
             </button>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MainImage from "../../assets/Images/landingimg.jpg";
 import "../LandingPage/landingPage.css";
 import logo from "../LandingPage/logoMain.svg";
+import Typical from "react-typical";
 
 function Landing() {
   return (
@@ -22,7 +23,14 @@ function Landing() {
         </a>
 
         <h3 className="title-landing">TT Builders</h3>
-        <h3 className="title-para">We Design </h3>
+        <h3 className="title-para">
+          We{" "}
+          <Typical
+            loop={Infinity}
+            wrapper="b"
+            steps={["Design", 1000, "Build", 1000, "Architect", 1000]}
+          />
+        </h3>
       </div>
     </div>
   );

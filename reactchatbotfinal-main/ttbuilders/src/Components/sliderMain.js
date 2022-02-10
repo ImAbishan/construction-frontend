@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Slider from "./Slider/slider.js";
-import "./sliderSection.css";
 
 // ! todo - render components
 // function App() {

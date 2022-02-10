@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import "../LoginPage/logIn.css";
+import SecondaryNavbar from "../../Components/SecondaryNavbar/secondaryNavbar";
+import SecondaryFooter from "../../Components/SecondaryFooter/secondaryFooter";
 
 export default class Login extends Component {
   render() {
     return (
       <>
+        <SecondaryNavbar />
         <div class="login-page">
           <div class="form-signin">
             <form class="register-form">
@@ -27,6 +30,7 @@ export default class Login extends Component {
             </form>
           </div>
         </div>
+        <SecondaryFooter />
       </>
     );
   }

@@ -23,14 +23,7 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-left: 20px;
-`;
-
-export const ColumnOne = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin-left: 20px;
+  margin-left: 60px;
 `;
 
 export const Row = styled.div`
@@ -47,18 +40,6 @@ export const FooterLink = styled.a`
   color: #fff;
   margin-bottom: 20px;
   font-size: 18px;
-  text-decoration: none;
-
-  &:hover {
-    color: green;
-    transition: 200ms ease-in;
-  }
-`;
-
-export const FooterLinkOne = styled.p`
-  color: #fff;
-  margin-bottom: 20px;
-  font-size: 16px;
   text-decoration: none;
 
   &:hover {

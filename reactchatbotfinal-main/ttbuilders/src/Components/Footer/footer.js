@@ -6,8 +6,6 @@ import {
   Column,
   FooterLink,
   Heading,
-  ColumnOne,
-  FooterLinkOne,
 } from "./footerStyles.js";
 
 const Footer = () => {
@@ -15,28 +13,28 @@ const Footer = () => {
     <Box>
       <Container>
         <Row>
-          <ColumnOne>
+          <Column>
             <Heading>About Us</Heading>
-            <FooterLinkOne>
+            <p>
               Having established in year 2018, we started off as a CAD Drafting
-              & Modeling arm of TT Builders. Over the last one decade, we have
-              carved a niche for ourselves into focus areas like 3D Stills and
-              Architectural Visualization CGI.
-            </FooterLinkOne>
-          </ColumnOne>
+              & Modeling arm of Pearl Phoenix Engineering. Over the last one
+              decade, we have carved a niche for ourselves into focus areas like
+              3D Stills and Architectural Visualization CGI.
+            </p>
+          </Column>
           <Column>
             <Heading>Services</Heading>
-            <FooterLink href="#">Designing</FooterLink>
-            <FooterLink href="#">Build</FooterLink>
-            <FooterLink href="#">Architect</FooterLink>
-            <FooterLink href="#">Maintainence</FooterLink>
+            <FooterLink href="#">Writing</FooterLink>
+            <FooterLink href="#">Internships</FooterLink>
+            <FooterLink href="#">Coding</FooterLink>
+            <FooterLink href="#">Teaching</FooterLink>
           </Column>
           <Column>
             <Heading>Contact Us</Heading>
-            <FooterLink href="#">Colombo</FooterLink>
-            <FooterLink href="#">Kandy</FooterLink>
-            <FooterLink href="#">Jaffna</FooterLink>
-            <FooterLink href="#">Galle</FooterLink>
+            <FooterLink href="#">Uttar Pradesh</FooterLink>
+            <FooterLink href="#">Ahemdabad</FooterLink>
+            <FooterLink href="#">Indore</FooterLink>
+            <FooterLink href="#">Mumbai</FooterLink>
           </Column>
           <Column>
             <Heading>Social Media</Heading>
