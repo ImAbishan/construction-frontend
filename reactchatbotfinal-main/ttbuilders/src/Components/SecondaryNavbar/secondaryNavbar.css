@@ -51,6 +51,7 @@ a {
   float: left;
   margin-left: 28px;
   font-size: 1.5em;
+  height: 60px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
