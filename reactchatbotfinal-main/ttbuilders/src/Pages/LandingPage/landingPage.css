@@ -12,13 +12,13 @@
 }
 .landing-btn {
   position: absolute;
-  top: 12px;
+  top: 18px;
   left: 1200px;
 }
 
 .landing-btn-signup {
   position: absolute;
-  top: 12px;
+  top: 18px;
   left: 1350px;
 }
 
@@ -27,7 +27,7 @@
   width: 130px;
   height: 40px;
   border: none;
-  background-color: #c59d5f;
+  background-color: #8b5e34;
   border-radius: 30px;
   color: #fff;
 }
@@ -39,7 +39,7 @@
   border: none;
   background-color: #fff;
   border-radius: 30px;
-  color: #c59d5f;
+  color: #8b5e34;
 }
 
 .landing-page .title-landing {

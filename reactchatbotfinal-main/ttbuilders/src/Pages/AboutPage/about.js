@@ -1,8 +1,9 @@
 import React, { Component, useState } from "react";
 import axios from "axios";
-import "../Signup/signUp.css";
+import "./about.css";
+import NavigationBar from "../../Components/NavigationBar/navbar.js";
 
-function SignUp() {
+function AboutPage() {
   //create use state hook
   const [userSignup, setUserSignup] = useState({
     firstName: "",
@@ -11,7 +12,6 @@ function SignUp() {
     userName: "",
     password: "",
     email: "",
-    userlevel: "",
   });
 
   const createUserSignup = () => {
@@ -24,6 +24,7 @@ function SignUp() {
 
   return (
     <>
+      <NavigationBar />
       <div class="login-page">
         <div class="form-signin">
           <form class="login-form">
@@ -45,30 +46,20 @@ function SignUp() {
             />
             <input
               type="text"
-              value={userSignup.userName}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, userName: event.target.value });
-              }}
-              placeholder="username"
-            />
-            <input
-              type="email"
-              value={userSignup.email}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, email: event.target.value });
-              }}
-              placeholder="Email"
-            />
-
-            <input
-              type="text"
               value={userSignup.mobile}
               onChange={(event) => {
                 setUserSignup({ ...userSignup, mobile: event.target.value });
               }}
               placeholder="Mobile"
             />
-
+            <input
+              type="text"
+              value={userSignup.userName}
+              onChange={(event) => {
+                setUserSignup({ ...userSignup, userName: event.target.value });
+              }}
+              placeholder="username"
+            />
             <input
               type="password"
               value={userSignup.password}
@@ -78,12 +69,12 @@ function SignUp() {
               placeholder="Password"
             />
             <input
-              type="userlevel"
-              value={userSignup.userlevel}
+              type="email"
+              value={userSignup.email}
               onChange={(event) => {
-                setUserSignup({ ...userSignup, userlevel: event.target.value });
+                setUserSignup({ ...userSignup, email: event.target.value });
               }}
-              placeholder="User Type"
+              placeholder="Email"
             />
 
             <button onClick={createUserSignup} href="home.js">
@@ -100,4 +91,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default AboutPage;
