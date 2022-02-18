@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import axios from "axios";
 import "../Signup/signUp.css";
+import NavBarForAuthentication from "../../Components/NavigationBar/navBarForAuthentication.js";
 
 function SignUp() {
   //create use state hook
@@ -24,6 +25,7 @@ function SignUp() {
 
   return (
     <>
+      <NavBarForAuthentication />
       <div class="login-page">
         <div class="form-signin">
           <form class="login-form">
