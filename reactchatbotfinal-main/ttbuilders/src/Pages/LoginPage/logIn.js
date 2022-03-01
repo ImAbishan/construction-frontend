@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import "../LoginPage/logIn.css";
+import NavBarForAuthentication from "../../Components/NavigationBar/navBarForAuthentication.js";
 
 export default class Login extends Component {
   render() {
     return (
       <>
+        <NavBarForAuthentication />
         <div class="login-page">
           <div class="form-signin">
             <form class="register-form">
