@@ -1,7 +1,6 @@
 import React, { Component, useState } from "react";
 import axios from "axios";
 import "./adminMain.css";
-import NavigationBar from "../../Components/NavigationBar/navbar.js";
 
 function Admin() {
   //create use state hook
@@ -24,7 +23,6 @@ function Admin() {
 
   return (
     <>
-      <NavigationBar />
       <div class="login-page">
         <div class="form-signin">
           <form class="login-form">

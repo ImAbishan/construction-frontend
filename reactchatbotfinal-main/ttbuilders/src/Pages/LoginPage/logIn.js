@@ -24,6 +24,9 @@ export default class Login extends Component {
                 Not registered..?
                 <a href="/signup">Create an account</a>
               </p>
+              <p class="message">
+                <a href="/admin">Admin</a>
+              </p>
             </form>
           </div>
         </div>
