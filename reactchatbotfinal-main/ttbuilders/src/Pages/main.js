@@ -5,7 +5,6 @@ import Employees from "../Components/Employees/employee.js";
 import Secondary from "../Components/Projects/secondary.js";
 import Footer from "../Components/Footer/footer.js";
 import SliderMain from "../Components/sliderMain";
-import FeedbackForm from "../Components/FeedbackForm/feedbackForm";
 
 function Main() {
   return (
@@ -15,7 +14,6 @@ function Main() {
       <Secondary />
       <Employees />
       <SimpleForm />
-      <FeedbackForm />
       <Footer />
     </div>
   );
