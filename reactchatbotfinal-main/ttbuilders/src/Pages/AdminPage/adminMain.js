@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 import axios from "axios";
 import "./adminMain.css";
 import NavBarForAuthentication from "../../Components/NavigationBar/navBarForAuthentication";
+import AdminNavbar from "./Components/AdminNavbar/adminnavbar";
 
 function Admin() {
   //create use state hook
@@ -24,7 +25,7 @@ function Admin() {
 
   return (
     <>
-     <NavBarForAuthentication/>
+      <AdminNavbar/>
     </>
   );
 }
