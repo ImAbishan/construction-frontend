@@ -9,7 +9,7 @@
     box-shadow: var(--light-shadow);
     height: 80px;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -77,4 +77,27 @@
 
 span {
     margin-left: 16px;
+}
+
+
+.menu-signup {
+    padding-right: 6px;
+    padding-left: 10px;
+    font-size: 24px;
+}
+
+.menu-signin {
+    padding-right: 6px;
+    padding-left: 10px;
+    font-size: 24px;
+}
+.admin-navlinks{
+    width: 100rem;
+    padding-left: 1350px;
+}
+.admin-logo{
+    align-items: center;
+}
+.logosvg {
+    width: 250px;
 }

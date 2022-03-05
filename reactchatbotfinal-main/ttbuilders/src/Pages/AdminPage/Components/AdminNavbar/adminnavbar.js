@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from './adminSideNavbarData';
 import './adminNavbar.css';
 import { IconContext } from 'react-icons';
+import logo from "../../Assets/logoAdmin.svg";
+
+
 
 function AdminNavbar() {
     const [sidebar, setSidebar] = useState(false);
@@ -18,6 +21,21 @@ function AdminNavbar() {
                     <Link to='#' className='menu-bars'>
                         <FaIcons.FaBars onClick={showSidebar} />
                     </Link>
+
+
+
+
+
+                    <div className="admin-navlinks">
+                        <Link to="/home" className="menu-signin">
+                            <AiIcons.AiOutlineUser />
+                        </Link>
+
+                        <Link to="/" className="menu-signup">
+                            <AiIcons.AiOutlineLogin />
+                        </Link>
+                    </div>
+
                 </div>
                 <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items' onClick={showSidebar}>
