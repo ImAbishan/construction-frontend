@@ -12,7 +12,7 @@ function SignUp() {
     userName: "",
     password: "",
     email: "",
-    userlevel: "",
+    typeEnum: "",
   });
 
   const createUserSignup = () => {
@@ -80,15 +80,15 @@ function SignUp() {
               placeholder="Password"
             />
             <input
-              type="userlevel"
-              value={userSignup.userlevel}
+              type="text"
+              value={userSignup.typeEnum}
               onChange={(event) => {
-                setUserSignup({ ...userSignup, userlevel: event.target.value });
+                setUserSignup({ ...userSignup, typeEnum: event.target.value });
               }}
               placeholder="User Type"
             />
 
-            <button onClick={createUserSignup} href="home.js">
+            <button onClick={createUserSignup} href="/login">
               login
             </button>
             <p class="message">
