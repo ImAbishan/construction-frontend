@@ -2,6 +2,8 @@ import React, { Component, useState } from "react";
 import axios from "axios";
 import "../Signup/signUp.css";
 import NavBarForAuthentication from "../../Components/NavigationBar/navBarForAuthentication.js";
+import {WebcamCapture} from "../../Components/Webcam/webcam";
+
 
 function SignUp() {
   //create use state hook
@@ -71,6 +73,9 @@ function SignUp() {
               type="text"
               placeholder="User Type"
             />
+
+            <WebcamCapture/>
+            <div class="space"></div>
 
             <button onClick={createUserSignup} href="/login">
               login
