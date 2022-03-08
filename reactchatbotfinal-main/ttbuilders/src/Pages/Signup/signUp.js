@@ -31,18 +31,10 @@ function SignUp() {
           <form class="login-form">
             <input
               type="text"
-              value={userSignup.firstName}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, firstName: event.target.value });
-              }}
               placeholder="Firstname"
             />
             <input
               type="text"
-              value={userSignup.lastName}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, lastName: event.target.value });
-              }}
               placeholder="Lastname"
             />
             <input
@@ -64,10 +56,6 @@ function SignUp() {
 
             <input
               type="text"
-              value={userSignup.mobile}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, mobile: event.target.value });
-              }}
               placeholder="Mobile"
             />
 
@@ -81,10 +69,6 @@ function SignUp() {
             />
             <input
               type="text"
-              value={userSignup.typeEnum}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, typeEnum: event.target.value });
-              }}
               placeholder="User Type"
             />
 
