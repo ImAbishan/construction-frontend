@@ -11,8 +11,9 @@ import CareerPage from "./Pages/CareersPage/career.js";
 import Admin from "./Pages/AdminPage/adminMain.js";
 import AdminHome from "./Pages/AdminPage/Pages/adminHome";
 import AdminProducts from "./Pages/AdminPage/Pages/adminProduct";
-import AdminReport from "./Pages/AdminPage/Pages/adminReport";
+import AdminReport from "./Pages/AdminPage/Pages/Report/adminReport";
 import AdminTeam from "./Pages/AdminPage/Pages/adminTeam";
+import AdminEmployee from "./Pages/AdminPage/Pages/Employee/adminEmployee";
 import "./App.css"
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
           <Route path="/admin" component={Admin} />
           <Route path="/admin/home" component={AdminHome} />
           <Route path="/admin/product" component={AdminProducts} />
-          <Route path="/admin/report" component={AdminReport} />
+          <Route path="/report" component={AdminReport} />
+          <Route path="/employee" component={AdminEmployee} />
           <Route path="/admin/team" component={AdminTeam} />
 
         </Switch>

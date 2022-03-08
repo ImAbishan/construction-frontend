@@ -12,7 +12,7 @@ export const SidebarData = [
     },
     {
         title: 'Reports',
-        path: '/admin/report',
+        path: '/report',
         icon: <IoIcons.IoIosPaper />,
         cName: 'nav-text'
     },
@@ -24,7 +24,7 @@ export const SidebarData = [
     },
     {
         title: 'Team',
-        path: '/admin/team',
+        path: '/employee',
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
