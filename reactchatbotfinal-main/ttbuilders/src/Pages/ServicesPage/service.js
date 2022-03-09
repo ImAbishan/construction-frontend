@@ -4,87 +4,76 @@ import "./service.css";
 import NavigationBar from "../../Components/NavigationBar/navbar.js";
 
 function ServicePage() {
-  //create use state hook
-  const [userSignup, setUserSignup] = useState({
-    firstName: "",
-    lastName: "",
-    mobile: "",
-    userName: "",
-    password: "",
-    email: "",
-  });
-
-  const createUserSignup = () => {
-    axios
-      .post("http://localhost:9090/api/usr-mgt/users", userSignup)
-      .then(() => {
-        window.location.reload(false);
-      });
-  };
 
   return (
     <>
       <NavigationBar />
-      <div class="login-page">
-        <div class="form-signin">
-          <form class="login-form">
-            <input
-              type="text"
-              value={userSignup.firstName}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, firstName: event.target.value });
-              }}
-              placeholder="Firstname"
-            />
-            <input
-              type="text"
-              value={userSignup.lastName}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, lastName: event.target.value });
-              }}
-              placeholder="Lastname"
-            />
-            <input
-              type="text"
-              value={userSignup.mobile}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, mobile: event.target.value });
-              }}
-              placeholder="Mobile"
-            />
-            <input
-              type="text"
-              value={userSignup.userName}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, userName: event.target.value });
-              }}
-              placeholder="username"
-            />
-            <input
-              type="password"
-              value={userSignup.password}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, password: event.target.value });
-              }}
-              placeholder="Password"
-            />
-            <input
-              type="email"
-              value={userSignup.email}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, email: event.target.value });
-              }}
-              placeholder="Email"
-            />
-
-            <button onClick={createUserSignup} href="home.js">
-              login
-            </button>
-            <p class="message">
-              Already have an Account?
-              <a href="/login">Sign In</a>
+      <div className="service-container">
+        <div className="row">
+          <div className="service">
+            <i className="fas fa-laptop-code"></i>
+            <h2>Design</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+              quae?
             </p>
-          </form>
+          </div>
+          <div className="service">
+            <i className="fas fa-chart-line"></i>
+            <h2>Development</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+              quae?
+            </p>
+          </div>
+          <div className="service">
+            <i className="fab fa-sketch"></i>
+            <h2>R&D</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+              quae?
+            </p>
+          </div>
+          <div className="service">
+            <i className="fas fa-database"></i>
+            <h2>Management</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+              quae?
+            </p>
+          </div>
+          <div className="service">
+            <i className="fas fa-mobile-alt"></i>
+            <h2>Road</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+              quae?
+            </p>
+          </div>
+          <div className="service">
+            <i className="fas fa-file-invoice"></i>
+            <h2>Pilling</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+              quae?
+            </p>
+          </div>
+          <div className="service">
+            <i className="fas fa-money-check-alt"></i>
+            <h2>Electrical</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+              quae?
+            </p>
+          </div>
+          <div className="service">
+            <i className="fas fa-network-wired"></i>
+            <h2>Interior</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+              quae?
+            </p>
+          </div>
         </div>
       </div>
     </>
