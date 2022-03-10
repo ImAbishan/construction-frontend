@@ -1,14 +1,13 @@
 import React from 'react';
 import Adminnavbar from "../../Components/AdminNavbar/adminnavbar";
+import AdminEmployeesPage from "../../Components/EmployeeDetails/showemployees";
 
 function AdminEmployees() {
     return (
         <>
             <Adminnavbar/>
-            <div className='products'>
-                <h1>Employees</h1>
-            </div>
-        </>
+            <AdminEmployeesPage/>
+            </>
 
     );
 }

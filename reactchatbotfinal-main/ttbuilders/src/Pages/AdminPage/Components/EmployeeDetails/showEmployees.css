@@ -1,0 +1,352 @@
+.grid-destination {
+    grid-area: grid-destination;
+    padding-top: 40px;
+}
+
+.grid-text {
+    text-align: center;
+    font-size: 33px;
+}
+
+.border-test {
+    width: 120px;
+    height: 5px;
+    background: #060b26;
+    margin: 26px auto;
+}
+
+.header {
+    width: 100%;
+    float: left;
+}
+
+.image img {
+    width: 25%;
+    float: left;
+}
+
+.description {
+    width: 100%;
+    float: left;
+}
+
+#design-cast {
+    position: relative;
+    overflow: hidden;
+}
+
+.member {
+    float: left;
+    width: 15%;
+    margin: 1% 2% 60px 7%;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+}
+
+.name {
+    position: absolute;
+    bottom: 0px;
+}
+
+.member img {
+    width: 100%;
+    display: inline-block;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 320px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #060b26;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.heading {
+    text-align: center;
+    color: #454343;
+    font-size: 30px;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+    z-index: 999;
+}
+.white-heading {
+    color: #ffffff;
+}
+.heading:after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: 40px;
+    width: 180px;
+    border-radius: 4px;
+    transform: translateX(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.white-heading:after {
+    background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.heading span {
+    font-size: 18px;
+    display: block;
+    font-weight: 500;
+}
+.white-heading span {
+    color: #ffffff;
+}
+
+footer {
+    background: #1a1e25;
+    color: #868c96;
+}
+
+footer p {
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer img {
+    width: 44px;
+}
+
+/**/
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+.form-abt {
+    position: relative;
+    border-radius: 12px;
+    z-index: 1;
+    background: #ffffff;
+    max-width: 500px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form-abt input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form-abt .btn-create {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    border-radius: 30px;
+    outline: 0;
+    background: #c59d5f;
+    width: 50%;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.form-abt .btn-update {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    border-radius: 30px;
+    outline: 0;
+    background: #ffffff;
+    width: 50%;
+    border: 1px solid #c59d5f;
+    padding: 15px;
+    color: #c59d5f;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-update:hover {
+    color: #ffffff;
+    background-color: #c59d5f;
+    border: none;
+}
+
+.btn-update {
+    background-color: #ffffff;
+    color: #c59d5f;
+}
+.form-abt button:hover,
+.form-abt button:active,
+.form-abt button:focus {
+    color: #c59d5f;
+    background-color: #ffffff;
+    border: 1px solid #c59d5f;
+}
+.form-abt .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+.form-abt .message a {
+    color: #c59d5f;
+    text-decoration: none;
+}
+.form-abt .register-form {
+    display: none;
+}
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.container:before,
+.container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.container .info {
+    margin: 50px auto;
+    text-align: center;
+}
+.container .info h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
+}
+.container .info span {
+    color: #4d4d4d;
+    font-size: 12px;
+}
+.container .info span a {
+    color: #000000;
+    text-decoration: none;
+}
+.container .info span .fa {
+    color: #ef3b3a;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/**/
+
+table {
+    width: 990px;
+    border-collapse: collapse;
+    margin: 50px auto;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+th {
+    background: #8b5e34;
+    color: white;
+    font-weight: bold;
+}
+
+td,
+th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 18px;
+}
+
+/*
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+    table {
+        width: 100%;
+    }
+
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border: 1px solid #ccc;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        /* Label the data */
+        content: attr(data-column);
+
+        color: #000;
+        font-weight: bold;
+    }
+}
