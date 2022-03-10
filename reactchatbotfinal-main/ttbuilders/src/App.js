@@ -14,6 +14,7 @@ import AdminProducts from "./Pages/AdminPage/Pages/adminProduct";
 import AdminReport from "./Pages/AdminPage/Pages/Report/adminReport";
 import AdminTeam from "./Pages/AdminPage/Pages/adminTeam";
 import AdminEmployee from "./Pages/AdminPage/Pages/Employee/adminEmployee";
+import ContactPage from "./Pages/ContactPage/contact";
 import "./App.css"
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/about" component={AboutPage} />
           <Route path="/projects" component={Projects} />
           <Route path="/service" component={ServicePage} />
+          <Route path="/contact" component={ContactPage} />
           <Route path="/careers" component={CareerPage} />
           <Route path="/admin" component={Admin} />
           <Route path="/admin/home" component={AdminHome} />
