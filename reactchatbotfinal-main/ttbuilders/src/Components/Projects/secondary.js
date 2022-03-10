@@ -20,7 +20,7 @@ function Secondary() {
 
   return (
     <main>
-      <section className="menu section">
+      <section className="menu section-pro">
         <div className="title">
           <h2>Top Projects</h2>
           <div className="underline"></div>
