@@ -2,6 +2,22 @@
     grid-area: grid-destination;
     padding-top: 40px;
 }
+.btn-export-csv{
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #8b5e34;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+    padding: 12px 35px;
+    border-radius: 40px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
+    white-space: nowrap;
+    border: none;
+    margin-left: 80%;
+    margin-top: 5%;
+}
 
 .grid-text {
     text-align: center;
@@ -350,3 +366,5 @@ and also iPads specifically.
         font-weight: bold;
     }
 }
+
+
