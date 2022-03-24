@@ -62,8 +62,36 @@ function AdminEmployeesPage() {
                             {/*<td>{users.total}</td>*/}
                             <td>001</td>
                             <td>Abishan</td>
-                            <td>02654646</td>
+                            <td>0711234567</td>
                             <td>Vavuniya</td>
+                        </tr>
+
+                        <tr>
+                            <td>002</td>
+                            <td>Bharathi</td>
+                            <td>0771234567</td>
+                            <td>Badulla</td>
+                        </tr>
+
+                        <tr>
+                            <td>003</td>
+                            <td>Clara</td>
+                            <td>0781234567</td>
+                            <td>Jaffna</td>
+                        </tr>
+
+                        <tr>
+                            <td>004</td>
+                            <td>Dhivya</td>
+                            <td>0777456123</td>
+                            <td>Colombo</td>
+                        </tr>
+
+                        <tr>
+                            <td>005</td>
+                            <td>Krish</td>
+                            <td>0774561567</td>
+                            <td>Hatton</td>
                         </tr>
                     </tbody>
                 </table>

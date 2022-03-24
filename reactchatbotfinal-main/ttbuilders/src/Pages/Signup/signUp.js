@@ -3,6 +3,7 @@ import axios from "axios";
 import "../Signup/signUp.css";
 import NavBarForAuthentication from "../../Components/NavigationBar/navBarForAuthentication.js";
 import {WebcamCapture} from "../../Components/Webcam/webcam";
+import Footer from "../../Components/Footer/footer";
 
 
 function SignUp() {
@@ -87,6 +88,7 @@ function SignUp() {
           </form>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

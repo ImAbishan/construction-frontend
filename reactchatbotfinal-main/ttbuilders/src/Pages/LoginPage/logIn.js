@@ -2,6 +2,7 @@ import React, { Component,useState} from "react";
 import "../LoginPage/logIn.css";
 import NavBarForAuthentication from "../../Components/NavigationBar/navBarForAuthentication.js";
 import {WebcamCapture} from "../../Components/Webcam/webcam";
+import Footer from "../../Components/Footer/footer";
 
 
 // const [name, setName] = useState('')
@@ -39,6 +40,7 @@ export default class Login extends Component {
             </form>
           </div>
         </div>
+        <Footer/>
       </>
     );
   }
