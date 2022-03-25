@@ -3,7 +3,7 @@ import axios from "axios";
 import "../Signup/signUp.css";
 import NavBarForAuthentication from "../../Components/NavigationBar/navBarForAuthentication.js";
 import {WebcamCapture} from "../../Components/Webcam/webcam";
-
+import SecondaryFooter from "../../Components/SecondaryFooter/secondaryFooter";
 
 function SignUp() {
   //create use state hook
@@ -87,6 +87,8 @@ function SignUp() {
           </form>
         </div>
       </div>
+
+      <SecondaryFooter/>
     </>
   );
 }

@@ -4,7 +4,7 @@ import '../../App.css';
 function Btns() {
     return (
       <div >
-<h1>Hi safan sa</h1>
+<h1></h1>
        
    
       </div>
