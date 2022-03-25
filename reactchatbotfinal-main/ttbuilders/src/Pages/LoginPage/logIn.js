@@ -2,7 +2,7 @@ import React, { Component,useState} from "react";
 import "../LoginPage/logIn.css";
 import NavBarForAuthentication from "../../Components/NavigationBar/navBarForAuthentication.js";
 import {WebcamCapture} from "../../Components/Webcam/webcam";
-
+import SecondaryFooter from "../../Components/SecondaryFooter/secondaryFooter";
 
 // const [name, setName] = useState('')
 // const [email, setEmail] = useState('');
@@ -39,6 +39,9 @@ export default class Login extends Component {
             </form>
           </div>
         </div>
+
+        <SecondaryFooter/>
+
       </>
     );
   }
