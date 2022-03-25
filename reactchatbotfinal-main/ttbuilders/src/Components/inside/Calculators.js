@@ -242,7 +242,7 @@ class Calculators extends Component {
 			exportEnabled: true,
 			theme: "dark2", // "light1", "dark1", "dark2"
 			title:{
-				text: "Amana's Life planner"
+				text: "TT Builders' Life planner"
 			},
 			axisY: {
 				title: "Salary",

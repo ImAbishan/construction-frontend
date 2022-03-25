@@ -6,10 +6,11 @@ import Popup from "reactjs-popup";
 
 import Calculators from "../Components/inside/Calculators";
 import { Modal } from "react-bootstrap";
+import Summary from './Summary'
 
-const Starts = () => {
+const Stats = () => {
   return (
-    <Popup position="top left" trigger={<option>Graph</option>}>
+    <Popup position="top" trigger={<option>Graph</option>}>
       <Calculators />
     </Popup>
   );
@@ -38,34 +39,6 @@ const config = {
   floating: true,
 };
 
-//----------  Summary page --------------
-
-class Summary extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: " ",
-      age: " ",
-      salaryanswer: " ",
-    };
-  }
-
-  componentWillMount() {
-    const { steps } = this.props;
-    const { name, age, salaryanswer } = steps;
-
-    this.setState({ name, age, salaryanswer });
-  }
-}
-
-Summary.propTypes = {
-  steps: PropTypes.object,
-};
-
-Summary.defaultProps = {
-  steps: undefined,
-};
 
 ////////---  Component class
 class SimpleForm extends Component {
@@ -95,21 +68,29 @@ class SimpleForm extends Component {
             {
               id: "intro-eng",
               message:
-                "Hey 👋, I'm Andreah! TT Builder's virtual assistant.I am here to help you get to know about us.",
+                "Hey 👋\n I'm Andreah!",
+              trigger: "intro-job",
+              delay: 600,
+            },
+
+            {
+              id: "intro-job",
+              message:
+              "I am TT Builders' virtual assistant.",
               trigger: "start-question-english",
               delay: 600,
             },
 
             {
               id: "start-question-english",
-              message: "You can discuss your future with me 🤗",
+              message: "I am here to help you!🤗",
               trigger: "start-question",
               delay: 600,
             },
 
             {
               id: "start-question",
-              message: "Shell we Start ?😃",
+              message: "Shall we get to know each other?😃",
               trigger: "option-first",
               delay: 600,
             },
@@ -127,7 +108,7 @@ class SimpleForm extends Component {
             // no response
             {
               id: "no-resp",
-              message: "Oh! Sorry will see next time",
+              message: "Sure!, ping me when you are ready\n Have a nice day!",
               delay: 600,
               trigger: "no-resp-ans-one",
             },
@@ -172,14 +153,14 @@ class SimpleForm extends Component {
 
             {
               id: "name-wish",
-              message: "Nice to e-meet you 😃 {previousValue}",
+              message: "Nice to e-meet you {previousValue}😃",
               trigger: "question-two",
               delay: 600,
             },
 
             {
               id: "question-two",
-              message: " Welcome to our Life planner! ",
+              message: " Welcome to our TT Builders' Life planner! ",
               delay: 600,
               trigger: "question-three",
             },
@@ -192,7 +173,7 @@ class SimpleForm extends Component {
 
             {
               id: "question-four",
-              message: "Ready for a few questions? 😊",
+              message: "Are u ready for a few questions to analyse? 😊",
               delay: 600,
               trigger: "question-five",
             },
@@ -200,18 +181,22 @@ class SimpleForm extends Component {
             {
               id: "question-five",
               options: [
-                {
-                  value: "getstart",
-                  label: "GET STARTED",
-                  trigger: "future-question",
-                },
+                { value: "getstart", label: "Yup! GET STARTED", trigger: "future-question"},
+                { value: "no", label: "No", trigger: "no-resp" },
               ],
               delay: 600,
             },
 
             {
               id: "future-question",
-              message: "How are you today ? 😀",
+              message: "We care a lot about your safety! 😀",
+              delay: 600,
+              trigger: "future-question-sub",
+            },
+
+            {
+              id: "future-question-sub",
+              message: "How are you today?",
               delay: 600,
               trigger: "answer-one",
             },
@@ -222,7 +207,7 @@ class SimpleForm extends Component {
                 {
                   value: "good",
                   label: "GOOD 😋",
-                  trigger: "good-question-one",
+                  trigger: "future-look",
                 },
                 { value: "bad", label: "NOT GOOD 😑", trigger: "bad-question" },
               ],
@@ -231,13 +216,13 @@ class SimpleForm extends Component {
 
             {
               id: "bad-question",
-              message: "I'm sorry to hear, you're having a tough time.😀",
+              message: "I'm sorry to hear that you're having a tough time.😀",
               delay: 600,
               trigger: "user-resp-three",
             },
             {
               id: "user-resp-three",
-              message: "Is there anything i can do? 😀",
+              message: "Is there anything i can do for making you better? 😀",
               delay: 600,
               trigger: "answer-two",
             },
@@ -245,18 +230,18 @@ class SimpleForm extends Component {
             {
               id: "answer-two",
               options: [
-                { value: "y", label: "yes, 😋", trigger: "qestion-yes" },
-                { value: "n", label: "No 🙂", trigger: "question-no" },
+                { value: "y", label: "yes 😋", trigger: "question-yes" },
+                { value: "n", label: "No 🙂", trigger: "start-stop" },
               ],
 
               delay: 600,
             },
 
             {
-              id: "qestion-yes",
+              id: "question-yes",
               options: [
                 { value: "jokes", label: "Jokes 😋 ", trigger: "jokes-ans" },
-                { value: "no", label: "No", trigger: "jokes-no-ans" },
+                { value: "no", label: "No please", trigger: "start-stop" },
               ],
               delay: 600,
             },
@@ -316,8 +301,8 @@ class SimpleForm extends Component {
             {
               id: "step-one",
               options: [
-                { value: "fine", label: "Now Ok, ", trigger: "start-two" },
-                { value: "No", label: "Not Good  ", trigger: "stop-two" },
+                { value: "fine", label: "Better, ", trigger: "main-question-two" },
+                { value: "No", label: "Still Not Good  ", trigger: "start-stop" },
               ],
               delay: 600,
             },
@@ -333,10 +318,27 @@ class SimpleForm extends Component {
               ],
               delay: 600,
             },
+            
+            {
+              id: "start-stop",
+              message: "Do you still really want to continue now?",
+              trigger: "start-stop-option",
+              delay: 600,
+            },
+
+            {
+
+              id: "start-stop-option",
+              options: [
+                { value: "Yes", label: "Yes", trigger: "main-question-one" },
+                { value: "No", label: "Not really", trigger: "stop-two" },
+              ],
+              delay: 600,
+              },
 
             {
               id: "stop-two",
-              message: "Ok, will see next time, have a nice day ",
+              message: "Sure! We respect your mood, Catch u some time later! ",
               delay: 600,
               trigger: "stop-three",
             },
@@ -392,15 +394,8 @@ class SimpleForm extends Component {
             },
 
             {
-              id: "good-question-one",
-              message: "I need to ask you few simple Questions 🙂",
-              delay: 600,
-              trigger: "main-question-one",
-            },
-
-            {
               id: "main-question-one",
-              message: "Are you ready? 😃",
+              message: "Are you ready for some more questions? 😃",
               delay: 600,
               trigger: "main-question-two",
             },
@@ -408,18 +403,15 @@ class SimpleForm extends Component {
             {
               id: "main-question-two",
               options: [
-                {
-                  value: "ready",
-                  label: "Yes, I am ready... 😁",
-                  trigger: "future-look",
-                },
+                { value: "ready", label: "Yes, I am ready... 😁", trigger: "future-look",},
+                { value: "notready", label: "Not now", trigger: "stop-two" },
               ],
               delay: 600,
             },
 
             {
               id: "future-look",
-              message: "Ok, Please select an Option ",
+              message: "Nice, Please select an Option ",
               delay: 600,
               trigger: "future-look-one",
             },
@@ -430,18 +422,27 @@ class SimpleForm extends Component {
                 {
                   value: "futurelooks",
                   label: "How Can I find the Budget of My Project ? 😁",
-                  trigger: "future-look-two",
+                  trigger: "choice",
                 },
                 {
                   value: "predication",
                   label: "How can you help with me my Dream Projects 😃",
+                  trigger: "no-resp",
                 },
                 {
                   value: "about-tt",
                   label: "What is special about TT Builders 😊",
+                  trigger: "no-resp",
                 },
               ],
               delay: 600,
+            },
+
+            {
+              id: "choice",
+              message: "Good Choice",
+              delay: 600,
+              trigger: "future-look-two",
             },
 
             {
@@ -450,9 +451,6 @@ class SimpleForm extends Component {
               delay: 600,
               trigger: "age",
             },
-
-            //        ],
-            //     delay:600,
 
             {
               id: "age",
@@ -473,7 +471,7 @@ class SimpleForm extends Component {
             {
               id: "write-age-one",
               delay: 1500,
-              message: "oh Okk 😎",
+              message: "Perfect age for a start up 😎",
               trigger: "future-question-start",
             },
 
@@ -494,22 +492,18 @@ class SimpleForm extends Component {
             {
               id: "future-question-two",
               delay: 1500,
-              message: "Can you please select one of the goals below...",
+              message: "Please select one of the options below...",
               trigger: "future-question-three",
             },
 
             {
               id: "future-question-three",
               options: [
-                {
-                  value: "house",
-                  label: "HOUSE 🏡",
-                  trigger: "house-question-one",
-                },
-                { value: "education", label: "EDUCATION 👨‍🎓" },
-                { value: "vehicle", label: "VEHICLE 🚗" },
-                { value: "wedding", label: "WEDDING 👭" },
-                { value: "retirement", label: "RETIREMENT" },
+                { value: "House", label: "HOUSE 🏡", trigger: "house-question-one",},
+                { value: "Education", label: "EDUCATION 👨‍🎓" ,trigger: "no-resp",},
+                { value: "Vehicle", label: "VEHICLE 🚗",trigger: "no-resp", },
+                { value: "Wedding", label: "WEDDING 👭" ,trigger: "no-resp",},
+                { value: "Retirement", label: "RETIREMENT",trigger: "no-resp", },
               ],
               delay: 600,
             },
@@ -578,27 +572,48 @@ class SimpleForm extends Component {
                 }
                 return true;
               },
-              trigger: "salary-user-answer-one",
+              trigger: "monthlyexpenses",
             },
 
             {
-              id: "salary-user-answer-one",
+              id: "expensesanswer",
+              user: true,
+
+              delay: 600,
+              validator: (value) => {
+                if (isNaN(value)) {
+                  return "Expense should be a number";
+                }
+                return true;
+              },
+              trigger: "annualsalary",
+            },
+
+            {
+              id: "salary_user_answer_one",
               options: [
                 {
                   value: "thwtissalaryincrementisyear",
                   label: "What is salary increment rate?",
-                  trigger: "salary-inc",
+                  trigger: "salaryinc",
                 },
-                { value: "skip", label: "Skip", trigger: "skip-one" },
+                { value: "skip", label: "Skip", trigger: "rate" },
               ],
               delay: 600,
             },
 
             {
-              id: "skip-one",
+              id: "annualsalary",
               message: "What is your annual salary increment rate? ",
               delay: 600,
-              trigger: "rate",
+              trigger: "salary_user_answer_one",
+            },
+
+            {
+              id: "monthlyexpenses",
+              message: "What is your monthly expense? ",
+              delay: 600,
+              trigger: "expensesanswer",
             },
 
             {
@@ -608,7 +623,7 @@ class SimpleForm extends Component {
                 if (isNaN(rate)) {
                   return "rate should be a number";
                 }
-                if (isNaN(rate) || rate > 50000) {
+                if (isNaN(rate) || rate > 100) {
                   return "Rate must be a number between 1 to 100";
                 }
                 return true;
@@ -619,10 +634,10 @@ class SimpleForm extends Component {
             },
 
             {
-              id: "salary-inc",
+              id: "salaryinc",
               component: <div> Percentage of salary increase each year </div>,
               delay: 600,
-              trigger: "salary-user-answer-one",
+              trigger: "rate",
             },
 
             {
@@ -635,7 +650,8 @@ class SimpleForm extends Component {
             {
               id: "summary-ends",
               trigger: "summary-end",
-              component: <Summary />,
+              component:
+                <Summary />,
               asMessage: false,
               delay: 600,
             },
@@ -643,7 +659,7 @@ class SimpleForm extends Component {
             {
               id: "summary-end",
               message:
-                "Below is Amana LifePlanners's prediction of your economy",
+                "Below is TT Builders' Life Planners prediction of your economy",
               trigger: "summary-end-graph",
               delay: 600,
             },
@@ -652,7 +668,7 @@ class SimpleForm extends Component {
               id: "summary-end-graph",
               trigger: "summary-ends-last",
               // component: <Modal.Dialog><Calculators salaryanswer={this.state.salaryanswer} rate={this.state.rate}/> </Modal.Dialog>,
-              component: <Starts />,
+              component: <Stats />,
 
               asMessage: false,
               delay: 600,
@@ -688,7 +704,7 @@ class SimpleForm extends Component {
                   label: "Monthly income",
                   trigger: "update-income",
                 },
-                { value: "Expenses", label: "Expenses" },
+                { value: "Expenses", label: "Expenses",trigger: "update-expenses", },
               ],
               delay: 600,
             },
@@ -700,22 +716,17 @@ class SimpleForm extends Component {
               delay: 600,
             },
             {
+              id: "update-expenses",
+              update: "expensesanswer",
+              trigger: "summary-ends-que",
+              delay: 600,
+            },
+            {
               id: "end-message",
 
-              message: "Thanks! ",
+              message: "Thank you! Reach anytime😎 ",
 
               end: true,
-            },
-
-            {
-              id: "jokes-ans-two-tamil",
-              component: (
-                <div>
-                  PATIENT:- Sir I play tennis, football and cricket daily..
-                </div>
-              ),
-              delay: 2800,
-              // trigger: 'jokes-ans-three-tamil',
             },
           ]}
           {...config}
