@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MainImage from "../../assets/Images/landingimg.jpg";
+import MainImage from "../../assets/Images/landingPng.png";
 import "../LandingPage/landingPage.css";
 import logo from "../LandingPage/logoMain.svg";
 import Typical from "react-typical";
@@ -22,7 +22,7 @@ function Landing() {
           <button className="landing-btn-signup">Sign Up</button>
         </a>
 
-        <h3 className="title-landing">TT Builders</h3>
+        <h3 className="title-landing">Tara Builders</h3>
         <h3 className="title-para">
           We{" "}
           <Typical
@@ -31,6 +31,8 @@ function Landing() {
             steps={["Design", 1000, "Build", 1000, "Architect", 1000]}
           />
         </h3>
+
+
       </div>
     </div>
   );

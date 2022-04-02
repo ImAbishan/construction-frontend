@@ -1,7 +1,12 @@
+
+
 .img-main {
-  width: 1519px;
-  height: 708px;
+  width: 650px;
+  height: 650px;
+  margin-top: 50px;
+  margin-left: 780px;
 }
+
 .landing-home {
   position: absolute;
   padding-left: 0px;
@@ -45,17 +50,39 @@
 .landing-page .title-landing {
   position: absolute;
   text-align: center;
-  color: #fff;
-  font-size: 108px;
-  top: 300px;
-  left: 480px;
+  color: #d9a779;
+  font-size: 76px;
+  top: 200px;
+  left: 80px;
+  font-family: 'DM Serif Display', serif;
 }
+
+/*.title-landing-sec{*/
+/*  position: absolute;*/
+/*  text-align: center;*/
+/*  color: #fff;*/
+/*  font-size: 72px;*/
+/*  top: 270px;*/
+/*  left: 80px;*/
+/*}*/
 
 .title-para {
   position: absolute;
-  text-align: center;
-  color: #fff;
-  font-size: 34px;
-  top: 420px;
-  left: 690px;
+  text-align: left;
+  color: #d9a779;
+  font-size: 50px;
+  top: 350px;
+  left: 80px;
+}
+
+.title-content{
+  max-width: 500px;
+  position: absolute;
+  text-align: left;
+  word-spacing: 1.5px;
+  color: #d9a779;
+  font-size: 18px;
+
+  top: 340px;
+  left: 80px;
 }
