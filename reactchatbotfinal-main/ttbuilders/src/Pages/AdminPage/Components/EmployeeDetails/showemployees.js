@@ -38,30 +38,22 @@ function AdminEmployeesPage() {
                         {/*<th>Action</th>*/}
                     </tr>
                     </thead>
-                    {/*<tbody>*/}
-                    {/*{userList.map((users, key) => (*/}
-                    {/*    <tr>*/}
-                    {/*        /!*<td>{users.orderNo}</td>*!/*/}
-                    {/*        /!*<td>{users.customerName}</td>*!/*/}
-                    {/*        /!*<td>{users.orderType}</td>*!/*/}
-                    {/*        /!*<td>{users.address}</td>*!/*/}
-                    {/*        /!*<td>{users.total}</td>*!/*/}
-                    {/*        <td>001</td>*/}
-                    {/*        <td>Abishan</td>*/}
-                    {/*        <td>02654646</td>*/}
-                    {/*        <td>Vavuniya</td>*/}
-                    {/*    </tr>*/}
-                    {/*))}*/}
-                    {/*</tbody>*/}
                     <tbody>
                         <tr>
-                            {/*<td>{users.orderNo}</td>*/}
-                            {/*<td>{users.customerName}</td>*/}
-                            {/*<td>{users.orderType}</td>*/}
-                            {/*<td>{users.address}</td>*/}
-                            {/*<td>{users.total}</td>*/}
                             <td>001</td>
                             <td>Abishan</td>
+                            <td>02654646</td>
+                            <td>Vavuniya</td>
+                        </tr>
+
+                        <tr>
+                            <td>002</td>
+                            <td>Test User</td>
+                            <td>02654646</td>
+                            <td>Vavuniya</td>
+                        </tr><tr>
+                            <td>003</td>
+                            <td>Test</td>
                             <td>02654646</td>
                             <td>Vavuniya</td>
                         </tr>
