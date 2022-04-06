@@ -3,7 +3,7 @@ import "./contact.css";
 import NavigationBar from "../../Components/NavigationBar/navbar.js";
 import ContactService from "../../services/contact.service";
 
-class ContactPage extends React.Component{
+export default class ContactPage extends Component{
 
     constructor(props) {
         super(props);
@@ -56,6 +56,7 @@ class ContactPage extends React.Component{
         ContactService.create(data)
             .then(response =>{
                 this.setState({
+                    id: response.data.id,
                     name: response.data.name,
                     email: response.data.email,
                     subject: response.data.subject,
@@ -103,6 +104,7 @@ class ContactPage extends React.Component{
     render() {
         return (
             <>
+
                 <NavigationBar/>
                 <section class="contact section" id="contact">
                     <div class="container">
@@ -132,9 +134,11 @@ class ContactPage extends React.Component{
                                     <div class="form-item col-6 padd-15">
                                         <div class="form-group">
                                             <input type="text"
-                                                   defaultValue={this.state.name}
-                                                   onChange={this.onChangeName}
                                                    class="form-control"
+                                                   id="name"
+                                                   required
+                                                   value={this.state.name}
+                                                   onChange={this.onChangeName}
                                                    placeholder="Name*"/>
                                         </div>
                                     </div>
@@ -142,16 +146,25 @@ class ContactPage extends React.Component{
                                     <div class="form-item col-6 padd-15">
                                         <div class="form-group">
                                             <input type="text"
-                                                   defaultValue={this.state.email} onChange={this.onChangeEmail}
-                                                   class="form-control" placeholder="Email*"/>
+                                                   id="email"
+                                                   required
+                                                   defaultValue={this.state.email}
+                                                   onChange={this.onChangeEmail}
+                                                   class="form-control"
+                                                   placeholder="Email*"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row-contact">
                                     <div class="form-item col-12 padd-15">
                                         <div class="form-group">
-                                            <input type="text" defaultValue={this.state.subject} onChange={this.onChangeSubject}
-                                                   class="form-control" placeholder="Subject*"/>
+                                            <input type="text"
+                                                   id="subject"
+                                                   required
+                                                   defaultValue={this.state.subject}
+                                                   onChange={this.onChangeSubject}
+                                                   class="form-control"
+                                                   placeholder="Subject*"/>
                                         </div>
                                     </div>
                                 </div>
@@ -159,8 +172,16 @@ class ContactPage extends React.Component{
                                 <div class="row-contact">
                                     <div class="form-item col-12 padd-15">
                                         <div class="form-group">
-                                            <textarea name="" placeholder="Message*" defaultValue={this.state.message} onChange={this.onChangeMessage}
-                                                      class="form-control"></textarea>
+                                            <textarea
+                                                name=""
+                                                id="message"
+                                                required
+                                                placeholder="Message*"
+                                                defaultValue={this.state.message}
+                                                onChange={this.onChangeMessage}
+                                                class="form-control">
+
+                                            </textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -175,10 +196,7 @@ class ContactPage extends React.Component{
                         </div>
                     </div>
                 </section>
-
             </>
         );
     }
 }
-
-export default ContactPage;

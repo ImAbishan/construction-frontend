@@ -1,6 +1,6 @@
 import axios from "axios";
 export default axios.create({
-    baseURL: "localhost:9090/api/usr-mgt",
+    baseURL: "http://localhost:9090/api/usr-mgt/contact",
     headers: {
         "Content-type": "application/json"
     }

@@ -2,13 +2,13 @@ import httpCommon from "../http-common.js";
 
 class ContactService {
     getAll() {
-        return httpCommon.get("/contact");
+        return httpCommon.get("/");
     }
     // get(id) {
     //     return http.get(`/tutorials/${id}`);
     // }
     create(data) {
-        return httpCommon.post("/contact", data);
+        return httpCommon.post("/", data);
     }
     // update(id, data) {
     //     return http.put(`/tutorials/${id}`, data);
