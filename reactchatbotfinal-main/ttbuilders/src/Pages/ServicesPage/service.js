@@ -2,6 +2,7 @@ import React, { Component, useState } from "react";
 import axios from "axios";
 import "./service.css";
 import NavigationBar from "../../Components/NavigationBar/navbar.js";
+import FooterNew from "../../Components/FooterNew/footerNew";
 
 function ServicePage() {
 
@@ -76,6 +77,7 @@ function ServicePage() {
           </div>
         </div>
       </div>
+      <FooterNew/>
     </>
   );
 }

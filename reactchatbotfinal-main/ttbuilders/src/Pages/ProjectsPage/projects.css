@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap");
+
+/*******
+Global Styles
+********/
+:root {
+    /* dark shades of primary color*/
+    --clr-primary-1: hsl(205, 86%, 17%);
+    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-3: hsl(205, 72%, 37%);
+    --clr-primary-4: hsl(205, 63%, 48%);
+    /* primary/main color */
+    --clr-primary-5: hsl(205, 78%, 60%);
+    /* lighter shades of primary color */
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-gold: #8b5e34;
+
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+}
+
+@media screen and (min-width: 768px) {
+    :root {
+        --h1-font-size: 2.258rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: 0.875rem;
+        --smaller-font-size: 0.813rem;
+
+        --mb-1: 0.5rem;
+        --mb-2: 1rem;
+        --mb-3: 1.5rem;
+        --mb-4: 2rem;
+        --mb-5: 2.5rem;
+    }
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    color: #8b5e34;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #8b5e34;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/**XXX***
+Global Styles
+***XXX**/
+
+/*******
+Section Styles
+********/
+
+.section{
+    margin-top: 75px;
+}
+
+.time{
+    color: #cc4b2c ;
+}
+
+.section-title {
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-3);
+    text-align: center;
+}
+
+.section-subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    text-align: center;
+    margin-bottom: 0.25rem;
+}
+
+/**XXX***
+Section Styles
+***XXX**/
+
+.bd-grid {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+}
+
+.header-one {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #fffafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*********************************************************/
+
+/*******
+Education Styles
+********/
+
+.education-container {
+    row-gap: 2rem;
+}
+
+.education-content {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+}
+
+.education-year,
+.education-race {
+    font-size: var(--h3-font-size);
+    margin-bottom: 0.25rem;
+}
+
+.education-university,
+.education-speciality {
+    display: block;
+    font-size: var(--smaller-font-size);
+}
+
+.education-year,
+.education-university {
+    text-align: right;
+}
+
+.education-time {
+    padding: 1rem;
+    justify-self: right;
+}
+
+.education-rounder {
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #8b5e34;
+    border-radius: 50%;
+}
+
+.education-rounder::before {
+    content: "";
+    position: absolute;
+    transform: translate(-4px, -4px);
+    width: 20px;
+    height: 20px;
+    border: 1px solid #8b5e34;
+    border-radius: 50%;
+}
+
+.eduction-line {
+    display: block;
+    height: 90%;
+    width: 2px;
+    background-color: #8b5e34;
+    transform: translate(5px, -4px);
+}
+
+/**XXX***
+Education Styles
+***XXX**/
+
+/*******
+Media Quiries
+********/
+
+@media screen and (min-width: 768px) {
+    .education-time {
+        padding: 0 2rem;
+    }
+}
+
+/**XXX***
+Media Quiries
+***XXX**/

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./employeeReport.css";
+import "./userResponse.css";
 import axios from "axios";
 import ReactHTMLTableToExcel from "react-html-to-excel";
 
-function AdminEmployeeReport() {
+function UserResponse() {
     const [userList, setUserList] = useState([]);
 
     const deleteUser = (id) => {
@@ -23,11 +23,11 @@ function AdminEmployeeReport() {
             <div className="user-tabel">
                 <ReactHTMLTableToExcel
                     className="btn-export-csv"
-                    table="export-excel-employee-details"
-                    filename="EmployeeDetails"
+                    table="user-response"
+                    filename="UserResponses"
                     sheet="sheet"
                     buttonText="EXPORT"/>
-                <table id="export-excel-employee-details">
+                <table id="user-response">
                     <thead>
                     <tr>
                         <th>Employee Id</th>
@@ -54,4 +54,4 @@ function AdminEmployeeReport() {
     );
 }
 
-export default AdminEmployeeReport;
+export default UserResponse;

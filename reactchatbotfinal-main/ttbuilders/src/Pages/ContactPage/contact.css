@@ -32,14 +32,14 @@ select {
 
 .section .container {
     padding-top: 60px;
-    padding-bottom: 70px;
+    padding-bottom: 10px;
 }
 
 .section-title {
     flex: 0 0 100%;
     -ms-flex: 0 0 100%;
     max-width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 10px;
 }
 
 .section-title h2 {

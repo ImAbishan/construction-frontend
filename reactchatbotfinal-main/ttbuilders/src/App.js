@@ -14,6 +14,7 @@ import AdminProducts from "./Pages/AdminPage/Pages/adminProduct";
 import AdminReport from "./Pages/AdminPage/Pages/Report/adminReport";
 import AdminTeam from "./Pages/AdminPage/Pages/adminTeam";
 import AdminEmployee from "./Pages/AdminPage/Pages/Employee/adminEmployee";
+import AdminUserResponse from "./Pages/AdminPage/Pages/ContactDetails/adminUserResponse";
 import ContactPage from "./Pages/ContactPage/contact";
 import "./App.css"
 function App() {
@@ -30,12 +31,15 @@ function App() {
           <Route path="/service" component={ServicePage} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/careers" component={CareerPage} />
+
+          {/*Admin Paths*/}
           <Route path="/admin" component={Admin} />
           <Route path="/admin/home" component={AdminHome} />
           <Route path="/admin/product" component={AdminProducts} />
           <Route path="/report" component={AdminReport} />
           <Route path="/employee" component={AdminEmployee} />
           <Route path="/admin/team" component={AdminTeam} />
+          <Route path="/userResponse" component={AdminUserResponse} />
 
         </Switch>
       </Router>

@@ -67,3 +67,46 @@
   font-size: 16px;
   word-spacing: 1px;
 }
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+/*font-size: 16px;*/
+/*color: #ffffff;*/
+/*background-color: #8b5e34;*/
+/*font-weight: 500;*/
+/*font-family: "Raleway", sans-serif;*/
+/*padding: 12px 35px;*/
+/*border-radius: 40px;*/
+/*-webkit-transition: all 0.3s ease;*/
+/*transition: all 0.3s ease;*/
+/*white-space: nowrap;*/
+/*border: none;*/
+.custom-file-input::before {
+  content: 'Upload Resume and Cover Letter';
+  display: inline-block;
+  background: #8b5e34;
+  border: none;
+  border-radius: 40px;
+  padding: 12px 35px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.contact-sub{
+  display: flex;
+  gap: 1rem;
+}

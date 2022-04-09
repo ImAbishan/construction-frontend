@@ -4,6 +4,8 @@ import "./career.css";
 import NavigationBar from "../../Components/NavigationBar/navbar.js";
 import SimpleForm from "../../componentsChat/SimpleForm";
 import Logo from "../../assets/Images/ca.png"
+import FooterNew from "../../Components/FooterNew/footerNew";
+
 function CareerPage() {
   return (
     <>
@@ -47,32 +49,30 @@ function CareerPage() {
                                 </div>
                             </div>
                         </div>
+                        <div class="contact-sub">
+                            <div className="row-contact">
+                                <div className="form-item col-12 padd-15">
+                                    <div className="form-group">
+                                        <input type="file" className="custom-file-input btn"/>
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div className="row-contact">
-                            <div className="form-item col-12 padd-15">
-                                <div className="form-group">
-                                    <textarea name="" placeholder="Cover Letter*" className="form-control"></textarea>
+
+                            <div className="row-contact">
+                                <div className="col-12 padd-15">
+                                    <button className="btn" type="submit">Submit</button>
                                 </div>
                             </div>
                         </div>
-                        <div className="row-contact">
-                            <div className="form-item col-12 padd-15">
-                                <div className="form-group">
-                                    <textarea name="" placeholder="Shoul chnage as upload cv*" className="form-control"></textarea>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div className="row-contact">
-                            <div className="col-12 padd-15">
-                                <button className="btn" type="submit">Send Message</button>
-                            </div>
-                        </div>
+
 
                     </div>
                 </div>
             </div>
         </section>
+        <FooterNew/>
 
 
     </>

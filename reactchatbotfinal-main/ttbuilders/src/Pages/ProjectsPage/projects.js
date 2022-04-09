@@ -2,91 +2,134 @@ import React, { Component, useState } from "react";
 import axios from "axios";
 import "./projects.css";
 import NavigationBar from "../../Components/NavigationBar/navbar.js";
+import FooterNew from "../../Components/FooterNew/footerNew";
 
 function Projects() {
-  //create use state hook
-  const [userSignup, setUserSignup] = useState({
-    firstName: "",
-    lastName: "",
-    mobile: "",
-    userName: "",
-    password: "",
-    email: "",
-  });
-
-  const createUserSignup = () => {
-    axios
-      .post("http://localhost:9090/api/usr-mgt/users", userSignup)
-      .then(() => {
-        window.location.reload(false);
-      });
-  };
-
   return (
     <>
       <NavigationBar />
-      <div class="login-page">
-        <div class="form-signin">
-          <form class="login-form">
-            <input
-              type="text"
-              value={userSignup.firstName}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, firstName: event.target.value });
-              }}
-              placeholder="Firstname"
-            />
-            <input
-              type="text"
-              value={userSignup.lastName}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, lastName: event.target.value });
-              }}
-              placeholder="Lastname"
-            />
-            <input
-              type="text"
-              value={userSignup.mobile}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, mobile: event.target.value });
-              }}
-              placeholder="Mobile"
-            />
-            <input
-              type="text"
-              value={userSignup.userName}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, userName: event.target.value });
-              }}
-              placeholder="username"
-            />
-            <input
-              type="password"
-              value={userSignup.password}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, password: event.target.value });
-              }}
-              placeholder="Password"
-            />
-            <input
-              type="email"
-              value={userSignup.email}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, email: event.target.value });
-              }}
-              placeholder="Email"
-            />
+      <section className="section">
+        <h2 className="section-title">Top Projects</h2>
 
-            <button onClick={createUserSignup} href="home.js">
-              login
-            </button>
-            <p class="message">
-              Already have an Account?
-              <a href="/login">Sign In</a>
-            </p>
-          </form>
+        <div className="education-container bd-grid">
+          <div className="education-content">
+            <div>
+              <h3 className="education-year time">2013-2014</h3>
+              <span className="education-university time"
+              >Construction</span
+              >
+            </div>
+
+            <div className="education-time">
+              <span className="education-rounder"></span>
+              <span className="eduction-line"></span>
+            </div>
+
+            <div>
+              <h3 className="education-race">Two Stored Hospital</h3>
+              <span className="education-speciality">Design and Construction of Proposed Two Storied Surgical Building at Base Hospital – Horan</span>
+            </div>
+          </div>
+
+          <div className="education-content">
+            <div>
+              <h3 className="education-year">National Police Academy</h3>
+              <span className="education-university">Construction of New Academic and Administrative Building for National Police Academy at Katana</span>
+            </div>
+
+            <div className="education-time">
+              <span className="education-rounder"></span>
+              <span className="eduction-line"></span>
+            </div>
+
+            <div>
+              <h3 className="education-race time">2014 - 2015</h3>
+              <span className="education-speciality time"
+              >Construction</span
+              >
+            </div>
+          </div>
+
+          <div className="education-content">
+            <div>
+              <h3 className="education-year time">2013-2014</h3>
+              <span className="education-university time"
+              >Construction</span
+              >
+            </div>
+
+            <div className="education-time">
+              <span className="education-rounder"></span>
+              <span className="eduction-line"></span>
+            </div>
+
+            <div>
+              <h3 className="education-race">Two Stored Hospital</h3>
+              <span className="education-speciality">Design and Construction of Proposed Two Storied Surgical Building at Base Hospital – Horan</span>
+            </div>
+          </div>
+
+          <div className="education-content">
+            <div>
+              <h3 className="education-year">National Police Academy</h3>
+              <span className="education-university">Construction of New Academic and Administrative Building for National Police Academy at Katana</span>
+            </div>
+
+            <div className="education-time">
+              <span className="education-rounder"></span>
+              <span className="eduction-line"></span>
+            </div>
+
+            <div>
+              <h3 className="education-race time">2014 - 2015</h3>
+              <span className="education-speciality time"
+              >Construction</span
+              >
+            </div>
+          </div>
+          <div className="education-content">
+            <div>
+              <h3 className="education-year time">2013-2014</h3>
+              <span className="education-university time"
+              >Construction</span
+              >
+            </div>
+
+            <div className="education-time">
+              <span className="education-rounder"></span>
+              <span className="eduction-line"></span>
+            </div>
+
+            <div>
+              <h3 className="education-race">Two Stored Hospital</h3>
+              <span className="education-speciality">Design and Construction of Proposed Two Storied Surgical Building at Base Hospital – Horan</span>
+            </div>
+          </div>
+
+          <div className="education-content">
+            <div>
+              <h3 className="education-year">National Police Academy</h3>
+              <span className="education-university">Construction of New Academic and Administrative Building for National Police Academy at Katana</span>
+            </div>
+
+            <div className="education-time">
+              <span className="education-rounder"></span>
+              <span className="eduction-line"></span>
+            </div>
+
+            <div>
+              <h3 className="education-race time">2014 - 2015</h3>
+              <span className="education-speciality time"
+              >Construction</span
+              >
+            </div>
+          </div>
+
+
+
         </div>
-      </div>
+      </section>
+      <FooterNew/>
     </>
   );
 }
