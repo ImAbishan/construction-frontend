@@ -155,6 +155,7 @@ Menu
   background: var(--clr-gold);
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
 }
 .btn-container {
   margin-bottom: 4rem;
