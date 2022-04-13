@@ -3,23 +3,32 @@ import "./userResponse.css";
 import axios from "axios";
 import ReactHTMLTableToExcel from "react-html-to-excel";
 
-function UserResponse() {
-    const [userList, setUserList] = useState([]);
 
-    const deleteUser = (id) => {
-        axios.delete("http://localhost:5000/users/" + id).then(() => {
-            window.location.reload(false);
-        });
-    };
 
-    //useEffect is the react hook
-    useEffect(() => {
-        axios.get("http://localhost:5000/users").then((allUsers) => {
-            setUserList(allUsers.data);
-        });
-    }, []);
-    return (
-        <>
+class UserResponse extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            posts: []
+        }
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:5000/users/')
+        .then(response => {
+            console.log(response)
+            this.setState({ posts: response.data})
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
+    render() {
+        const {posts} = this.state
+        return (
+            <>
             <div className="user-tabel">
                 <ReactHTMLTableToExcel
                     className="btn-export-csv"
@@ -38,20 +47,22 @@ function UserResponse() {
                     </tr>
                     </thead>
                     <tbody>
-                    {userList.map((users, key) => (
+                    {posts.map(post => (
                         <tr>
-                            <td>{users.orderNo}</td>
-                            <td>{users.customerName}</td>
-                            <td>{users.orderType}</td>
-                            <td>{users.address}</td>
-                            <td>{users.total}</td>
+                            <td>{post.employee_id}</td>
+                            <td>{post.name}</td>
+                            <td>{post.position}</td>
+                            <td>{post.salary}</td>
+                            <td>{post.experience}</td>
                         </tr>
                     ))}
                     </tbody>
                 </table>
             </div>
         </>
-    );
+        )
+    }
 }
+ 
 
 export default UserResponse;
