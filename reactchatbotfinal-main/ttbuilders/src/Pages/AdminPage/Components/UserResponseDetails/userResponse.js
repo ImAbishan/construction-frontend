@@ -15,7 +15,7 @@ class UserResponse extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/users/')
+        axios.get('localhost:9090/api/usr-mgt/contact')
         .then(response => {
             console.log(response)
             this.setState({ posts: response.data})
@@ -39,21 +39,19 @@ class UserResponse extends React.Component {
                 <table id="user-response">
                     <thead>
                     <tr>
-                        <th>Employee Id</th>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Salary</th>
-                        <th>Experience</th>
+                        <th>Named</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>Message</th>
                     </tr>
                     </thead>
                     <tbody>
                     {posts.map(post => (
                         <tr>
-                            <td>{post.employee_id}</td>
                             <td>{post.name}</td>
-                            <td>{post.position}</td>
-                            <td>{post.salary}</td>
-                            <td>{post.experience}</td>
+                            <td>{post.email}</td>
+                            <td>{post.subject}</td>
+                            <td>{post.message}</td>
                         </tr>
                     ))}
                     </tbody>
