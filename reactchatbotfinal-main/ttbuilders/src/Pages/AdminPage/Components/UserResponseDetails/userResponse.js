@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./userResponse.css";
 import axios from "axios";
 import ReactHTMLTableToExcel from "react-html-to-excel";
