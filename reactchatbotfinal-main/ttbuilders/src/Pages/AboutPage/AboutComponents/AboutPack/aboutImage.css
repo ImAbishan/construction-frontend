@@ -1,0 +1,37 @@
+.beside-img {
+    height: 600px;
+    column-count: 1;
+    column-gap: 50px;
+    padding: 50px;
+}
+.beside-pic {
+    float: left;
+    width: 700px;
+    shape-margin: 20px;
+    margin-right: 20px;
+}
+
+.beside-heading{
+    font-size: 64px;
+    color: #8b5e34;
+}
+
+.beside-txt {
+    line-height: 1.6;
+    font-family: Helvetica;
+    text-align: justify;
+    margin: 0;
+    font-size: 14px;
+    margin-top: 160px;
+}
+
+.do-head{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 40px;
+    color: #8b5e34;
+}
+
+.do-head:hover{
+    color: #8b9199;
+}

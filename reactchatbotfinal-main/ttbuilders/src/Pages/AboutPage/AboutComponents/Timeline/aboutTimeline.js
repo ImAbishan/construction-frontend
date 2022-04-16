@@ -5,6 +5,7 @@ import "./aboutTimeLine.css";
 const AboutTimeline = () => {
     return (
         <>
+            <p className=" stats-head"> Quick Stats </p>
             <section id="counter-stats" className="wow fadeInRight" data-wow-duration="1.4s">
                 <div className="container">
                     <div className="row">

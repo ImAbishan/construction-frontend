@@ -8,7 +8,8 @@
 section#counter-stats {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 40px;
+    margin-bottom: 15px;
 }
 
 .stats {
@@ -26,6 +27,16 @@ section#counter-stats {
 .stats .fa:hover {
     color: #8b9199;
     font-size: 60px;
+}
+
+.stats-head{
+    text-align: center;
+    font-size: 40px;
+    color: #8b5e34;
+}
+
+.stats-head:hover{
+    color: #8b9199;
 }
 
 /*/ end count stats /*/
