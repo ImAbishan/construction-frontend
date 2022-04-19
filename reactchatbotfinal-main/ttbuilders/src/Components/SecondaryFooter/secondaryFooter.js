@@ -5,10 +5,10 @@ import "./secondaryFooter.css";
 const SecondaryFooter = () => {
     return (
         <>
-
-
-            <footer class="sec-footer">
-                <p>Copyright &copy; 2022 <img src="https://i.ibb.co/QDy827D/ak-logo.png" alt="logo"/> All Rights Reserved.</p>
+            <footer className="secondary-footer">
+                <div className="wrapper">
+                    <p className="wrapper-text">&copy;2022 <span className="sec-footer-span">TT Builders</span>   All Rights Reserved</p>
+                </div>
             </footer>
         </>
     );

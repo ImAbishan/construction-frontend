@@ -1,0 +1,25 @@
+.admin-landing-page{
+    display: flex;
+    margin-left: 15%;
+}
+
+.admin-text{
+    margin-top: 150px;
+}
+
+.head-admin{
+    font-size: 96px;
+    color: #8b5e34;
+}
+
+.sub-admin{
+    font-size: 24px;
+    color: #8b5e34;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.admin-landing-logo{
+    width: 500px;
+    margin-left: 40%;
+}
