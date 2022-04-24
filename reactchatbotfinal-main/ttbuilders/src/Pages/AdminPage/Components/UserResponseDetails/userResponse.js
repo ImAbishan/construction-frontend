@@ -2,31 +2,30 @@ import React, { useState, useEffect } from "react";
 import "./userResponse.css";
 import axios from "axios";
 import ReactHTMLTableToExcel from "react-html-to-excel";
+import {doc ,setDoc, addDoc, collection, serverTimestamp,query, orderBy, onSnapshot} from "firebase/firestore"
+import {db} from "../../../../fire";
 
 
 
-class UserResponse extends React.Component {
-    constructor(props) {
-        super(props);
+function UserResponse(){
 
-        this.state = {
-            posts: []
-        }
-    }
+    const [articles,setArticles] = useState([]);
 
-    componentDidMount() {
-        axios.get('localhost:9090/api/usr-mgt/contact')
-        .then(response => {
-            console.log(response)
-            this.setState({ posts: response.data})
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    }
+    useEffect(() => {
+        const articleRef = collection(db, "Vavancies");
+        const q  = query(articleRef, orderBy("createdAt", "desc"));
+        onSnapshot(q, (snapshot) => {
+            const articles = snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setArticles(articles);
+            console.log(articles);
+        });
+    },[]);
 
-    render() {
-        const {posts} = this.state
+
+
         return (
             <>
             <div className="user-tabel">
@@ -39,19 +38,19 @@ class UserResponse extends React.Component {
                 <table id="user-response">
                     <thead>
                     <tr>
-                        <th>Named</th>
+                        <th>Name</th>
                         <th>Email</th>
-                        <th>Subject</th>
-                        <th>Message</th>
+                        <th>Position</th>
+                        <th>File</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {posts.map(post => (
+                    {articles.map(({id,name,email,position,imageUrl}) => (
                         <tr>
-                            <td>{post.name}</td>
-                            <td>{post.email}</td>
-                            <td>{post.subject}</td>
-                            <td>{post.message}</td>
+                            <td>{name}</td>
+                            <td>{email}</td>
+                            <td>{position}</td>
+                            {/*<td>{imageUrl}</td>*/}
                         </tr>
                     ))}
                     </tbody>
@@ -59,7 +58,6 @@ class UserResponse extends React.Component {
             </div>
         </>
         )
-    }
 }
  
 

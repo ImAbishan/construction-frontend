@@ -17,6 +17,8 @@ const SignUp = (props) =>{
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
   const [mobile,setMobile] = useState('');
+  const [error,setError] = useState(false);
+
   // const [password,setPassword] = useState('');
   // const [email,setEmail] = useState('');
   // const [password,setPassword] = useState('');
@@ -44,28 +46,42 @@ const SignUp = (props) =>{
     }
   }
 
+  // const register = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const user = createUserWithEmailAndPassword(auth, email, password);
+  //     //         .catch((err) => {
+  //     //             switch (err.code){
+  //     //                 case "auth/invalid-email":
+  //     //                 case "auth/user-disabled":
+  //     //                 case "auth/user-not-found":
+  //     //                     setEmailError(err.message);
+  //     //                     break;
+  //     //                 case "auth/wrong-password":
+  //     //                     setPasswordError(err.message);
+  //     //                     break;
+  //     //             }
+  //     history.push("/login")
+  //     console.log(user);
+  //   }
+  //   catch (error){
+  //     alert(error.message);
+  //   }
+  // }
+
   const register = async (e) => {
     e.preventDefault();
-    try {
-      const user = createUserWithEmailAndPassword(auth, email, password);
-      //         .catch((err) => {
-      //             switch (err.code){
-      //                 case "auth/invalid-email":
-      //                 case "auth/user-disabled":
-      //                 case "auth/user-not-found":
-      //                     setEmailError(err.message);
-      //                     break;
-      //                 case "auth/wrong-password":
-      //                     setPasswordError(err.message);
-      //                     break;
-      //             }
-      history.push("/home")
-      console.log(user);
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((newUserCredentials) => {
+          const newUser = newUserCredentials.user;
+          history.push("/login")
+          console.log(user);
+        })
+        .catch ((error) => {
+          setError(true);
+      });
     }
-    catch (error){
-      alert(error.message);
-    }
-  }
+
 
   useEffect(() => {
 
@@ -129,7 +145,7 @@ const SignUp = (props) =>{
             />
 
             <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 autoFocus
                 required
@@ -140,8 +156,9 @@ const SignUp = (props) =>{
             <div class="space"></div>
 
             <button onClick={register} href="/login">
-              login
+              Sign Up
             </button>
+            {/*{error && <span>Wrong Email or Password</span>}*/}
             <p class="message">
               Already have an Account?
               <a href="/login">Sign In</a>

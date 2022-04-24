@@ -16,6 +16,7 @@ import AdminTeam from "./Pages/AdminPage/Pages/adminTeam";
 import AdminEmployee from "./Pages/AdminPage/Pages/Employee/adminEmployee";
 import AdminUserResponse from "./Pages/AdminPage/Pages/ContactDetails/adminUserResponse";
 import ContactPage from "./Pages/ContactPage/contact";
+import FaceVerification from "./Pages/FaceVerificationPage/faceVerification";
 import "./App.css"
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               path="/login"
               component={Login}/>
           <Route path="/signup" component={SignUp} />
+          <Route path="/verification" component={FaceVerification} />
           <Route path="/about" component={AboutPage} />
           <Route path="/projects" component={Projects} />
           <Route path="/service" component={ServicePage} />

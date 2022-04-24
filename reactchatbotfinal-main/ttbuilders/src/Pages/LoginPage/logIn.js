@@ -14,7 +14,7 @@ const Login = (props) => {
     const [user,setUser] = useState({});
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-    // const [emailError,setEmailError] = useState(1);
+    const [error,setError] = useState(false);
     // const [passwordError,setPasswordError] = useState("");
     const [hasAccount,setHasAccount] = useState(false);
     const history = useHistory();
@@ -27,33 +27,35 @@ const Login = (props) => {
         setUser(currenUser);
     })
 
-    const logIn = async (e) => {
+    const logIn = (e) => {
         e.preventDefault();
-        try {
-            const user = signInWithEmailAndPassword(auth, email, password);
-            history.push("/admin")
-            console.log(user);
-        }
-        catch (error){
-            alert(error.message);
-        }
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user =  userCredential.userl;
+                history.push("/admin")
+                console.log(user);
+            })
+            .catch((error) => {
+                setError(true)
+            });
     }
+
+    // const logIn = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         const user = signInWithEmailAndPassword(auth, email, password);
+    //         history.push("/admin")
+    //         console.log(user);
+    //     }
+    //     catch (error){
+    //         alert(error.message);
+    //     }
+    // }
 
     const register = async (e) => {
       e.preventDefault();
       try {
           const user = createUserWithEmailAndPassword(auth, email, password);
-          //         .catch((err) => {
-          //             switch (err.code){
-          //                 case "auth/invalid-email":
-          //                 case "auth/user-disabled":
-          //                 case "auth/user-not-found":
-          //                     setEmailError(err.message);
-          //                     break;
-          //                 case "auth/wrong-password":
-          //                     setPasswordError(err.message);
-          //                     break;
-          //             }
           console.log(user);
       }
       catch (error){
@@ -163,7 +165,7 @@ const Login = (props) => {
                   onChange={(e) => {setEmail(e.target.value)}}
               />
                 <p className="error-message"></p>
-              <input type="text"
+              <input type="password"
                      placeholder="Password"
                      autoFocus
                      required
@@ -172,6 +174,7 @@ const Login = (props) => {
                 <p className="error-message"></p>
               <div class="space"></div>
               <button onClick={logIn}>login</button>
+                {error && <span>Wrong Email or Password</span>}
                 {/*<Router>*/}
                 {/*    <Switch>*/}
                 {/*        <Route path="/login">*/}
@@ -185,7 +188,9 @@ const Login = (props) => {
                 <a href="/signup">Create an account</a>
               </p>
               <p className="message">
-                <a href="/admin">Admin</a>
+                  If you are an Admin
+                <a href="/verification"> Click Here </a>
+
               </p>
             </form>
           </div>
