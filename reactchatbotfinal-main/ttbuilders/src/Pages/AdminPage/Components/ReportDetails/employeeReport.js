@@ -38,15 +38,37 @@ function AdminEmployeeReport() {
                     </tr>
                     </thead>
                     <tbody>
-                    {userList.map((users, key) => (
                         <tr>
-                            <td>{users.orderNo}</td>
-                            <td>{users.customerName}</td>
-                            <td>{users.orderType}</td>
-                            <td>{users.address}</td>
-                            <td>{users.total}</td>
+                            <td>001</td>
+                            <td>Test</td>
+                            <td>02654646</td>
+                            <td>Galle</td>
+                            <td>1 Years</td>
                         </tr>
-                    ))}
+
+                        <tr>
+                            <td>002</td>
+                            <td>MS</td>
+                            <td>02654646</td>
+                            <td>Kandy</td>
+                            <td>3 Years</td>
+                        </tr>
+
+                        <tr>
+                            <td>003</td>
+                            <td>Sanga</td>
+                            <td>02654646</td>
+                            <td>Colombo</td>
+                            <td>3 Years</td>
+                        </tr>
+
+                        <tr>
+                            <td>004</td>
+                            <td>Thara</td>
+                            <td>02654646</td>
+                            <td>Vavuniya</td>
+                            <td>6 Years</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
