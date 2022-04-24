@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component, useEffect, useState} from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landing from "./Pages/LandingPage/landing.js";
 import Main from "./Pages/main.js";
@@ -17,14 +17,18 @@ import AdminEmployee from "./Pages/AdminPage/Pages/Employee/adminEmployee";
 import AdminUserResponse from "./Pages/AdminPage/Pages/ContactDetails/adminUserResponse";
 import ContactPage from "./Pages/ContactPage/contact";
 import "./App.css"
+
 function App() {
+
   return (
     <div>
       <Router>
         <Switch>
           <Route path="/" exact={true} component={Landing} />
           <Route path="/home" component={Main} />
-          <Route path="/login" component={Login} />
+          <Route
+              path="/login"
+              component={Login}/>
           <Route path="/signup" component={SignUp} />
           <Route path="/about" component={AboutPage} />
           <Route path="/projects" component={Projects} />

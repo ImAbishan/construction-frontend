@@ -1,30 +1,86 @@
-import React, { Component, useState } from "react";
+import React, {Component, useEffect, useState} from "react";
 import axios from "axios";
 import "../Signup/signUp.css";
 import NavBarForAuthentication from "../../Components/NavigationBar/navBarForAuthentication.js";
 import {WebcamCapture} from "../../Components/Webcam/webcam";
 import SecondaryFooter from "../../Components/SecondaryFooter/secondaryFooter";
+import {auth} from "../../fire.js"
+import {createUserWithEmailAndPassword,onAuthStateChanged,signOut,signInWithEmailAndPassword} from "firebase/auth"
+import {useHistory} from "react-router-dom";
 
-function SignUp() {
-  //create use state hook
-  const [userSignup, setUserSignup] = useState({
-    firstName: "",
-    lastName: "",
-    mobile: "",
-    userName: "",
-    password: "",
-    email: "",
-    typeEnum: "",
-  });
 
-  const createUserSignup = () => {
-    axios
-      .post("http://localhost:9090/api/usr-mgt/users", userSignup)
-      .then(() => {
-        window.location.reload(false);
-      });
-  };
+const SignUp = (props) =>{
+  const [user,setUser] = useState({});
+  const [firstname,setFirstname] = useState('');
+  const [lastname,setlastName] = useState('');
+  const [userName,setUserName] = useState('');
+  const [email,setEmail] = useState('');
+  const [password,setPassword] = useState('');
+  const [mobile,setMobile] = useState('');
+  // const [password,setPassword] = useState('');
+  // const [email,setEmail] = useState('');
+  // const [password,setPassword] = useState('');
+  // const [emailError,setEmailError] = useState(1);
+  // const [passwordError,setPasswordError] = useState("");
+  const [hasAccount,setHasAccount] = useState(false);
+  const history = useHistory();
+  // const clearInputs = () => {
+  //     setEmail("");
+  //     setPassword("");
+  // }
 
+  onAuthStateChanged(auth, (currenUser) => {
+    setUser(currenUser);
+  })
+
+  const logIn = async (e) => {
+    e.preventDefault();
+    try {
+      const user = signInWithEmailAndPassword(auth, email, password);
+      console.log(user);
+    }
+    catch (error){
+      alert(error.message);
+    }
+  }
+
+  const register = async (e) => {
+    e.preventDefault();
+    try {
+      const user = createUserWithEmailAndPassword(auth, email, password);
+      //         .catch((err) => {
+      //             switch (err.code){
+      //                 case "auth/invalid-email":
+      //                 case "auth/user-disabled":
+      //                 case "auth/user-not-found":
+      //                     setEmailError(err.message);
+      //                     break;
+      //                 case "auth/wrong-password":
+      //                     setPasswordError(err.message);
+      //                     break;
+      //             }
+      history.push("/home")
+      console.log(user);
+    }
+    catch (error){
+      alert(error.message);
+    }
+  }
+
+  useEffect(() => {
+
+    const unsubscribe = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        // User logged in
+        setUser(userAuth);
+      } else {
+        // User logged out
+        setUser(null);
+      }
+    });
+
+    return unsubscribe;
+  }, []);
   return (
     <>
       <NavBarForAuthentication />
@@ -34,50 +90,56 @@ function SignUp() {
             <input
               type="text"
               placeholder="Firstname"
+              autoFocus
+              required
+              value={firstname}
+              onChange={(e) => {setFirstname(e.target.value)}}
             />
             <input
               type="text"
               placeholder="Lastname"
+              autoFocus
+              required
+              value={lastname}
+              onChange={(e) => {setlastName(e.target.value)}}
             />
             <input
               type="text"
-              value={userSignup.userName}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, userName: event.target.value });
-              }}
               placeholder="username"
+              autoFocus
+              required
+              value={userName}
+              onChange={(e) => {setUserName(e.target.value)}}
             />
             <input
-              type="email"
-              value={userSignup.email}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, email: event.target.value });
-              }}
-              placeholder="Email"
+                type="text"
+                placeholder="Email"
+                autoFocus
+                required
+                value={email}
+                onChange={(e) => {setEmail(e.target.value)}}
             />
-
             <input
               type="text"
               placeholder="Mobile"
+              autoFocus
+              required
+              value={mobile}
+              onChange={(e) => {setMobile(e.target.value)}}
             />
 
             <input
-              type="password"
-              value={userSignup.password}
-              onChange={(event) => {
-                setUserSignup({ ...userSignup, password: event.target.value });
-              }}
-              placeholder="Password"
+                type="text"
+                placeholder="Password"
+                autoFocus
+                required
+                value={password}
+                onChange={(e) => {setPassword(e.target.value)}}
             />
-            <input
-              type="text"
-              placeholder="User Type"
-            />
-
             <WebcamCapture/>
             <div class="space"></div>
 
-            <button onClick={createUserSignup} href="/login">
+            <button onClick={register} href="/login">
               login
             </button>
             <p class="message">
@@ -94,3 +156,5 @@ function SignUp() {
 }
 
 export default SignUp;
+
+

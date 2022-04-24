@@ -15,6 +15,7 @@
     "bootstrap": "^5.1.1",
     "canvasjs-react-charts": "^1.0.5",
     "emotion": "^11.0.0",
+    "firebase": "^9.6.11",
     "history": "^5.0.1",
     "logrocket": "^2.0.0",
     "prop-types": "^15.7.2",
