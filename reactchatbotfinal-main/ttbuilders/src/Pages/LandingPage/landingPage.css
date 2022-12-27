@@ -32,7 +32,7 @@
   width: 130px;
   height: 40px;
   border: none;
-  background-color: #8b5e34;
+  background-color: #50b6e6;
   border-radius: 30px;
   color: #fff;
 }
@@ -44,13 +44,13 @@
   border: none;
   background-color: #fff;
   border-radius: 30px;
-  color: #8b5e34;
+  color: #50b6e6;
 }
 
 .landing-page .title-landing {
   position: absolute;
   text-align: center;
-  color: #d9a779;
+  color: #50b6e6;
   font-size: 76px;
   top: 200px;
   left: 80px;
@@ -69,7 +69,7 @@
 .title-para {
   position: absolute;
   text-align: left;
-  color: #d9a779;
+  color: #50b6e6;
   font-size: 50px;
   top: 350px;
   left: 80px;

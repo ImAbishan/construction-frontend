@@ -5,7 +5,7 @@
 .btn-export-csv{
     font-size: 16px;
     color: #ffffff;
-    background-color: #8b5e34;
+    background-color: #50b6e6;
     font-weight: 500;
     font-family: "Raleway", sans-serif;
     padding: 12px 35px;
@@ -297,7 +297,7 @@ tr:nth-of-type(odd) {
 }
 
 th {
-    background: #8b5e34;
+    background: #50b6e6;
     color: white;
     font-weight: bold;
 }

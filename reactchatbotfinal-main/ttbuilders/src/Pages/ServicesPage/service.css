@@ -20,7 +20,7 @@
 
 .service-container h1::after {
   content: '';
-  background: #8b5e34;
+  background: #50b6e6;
   width: 100px;
   height: 5px;
   position: absolute;
@@ -48,7 +48,7 @@
 .service i {
   font-size: 40px;
   margin-bottom: 10px;
-  color: #8b5e34;
+  color: #50b6e6;
 }
 
 .service h2 {
@@ -57,7 +57,7 @@
 }
 
 .service:hover {
-  background: #8b5e34;
+  background: #50b6e6;
   color: #fff;
   transform: scale(1.05);
 }

@@ -16,7 +16,7 @@ function AdminNavbar() {
 
     return (
         <>
-            <IconContext.Provider value={{ color: '#8b5e34' }}>
+            <IconContext.Provider value={{ color: '#50b6e6' }}>
                 <div className='navbar'>
                     <Link to='#' className='menu-bars'>
                         <FaIcons.FaBars onClick={showSidebar} />

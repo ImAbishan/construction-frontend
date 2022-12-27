@@ -22,7 +22,7 @@ function Landing() {
           <button className="landing-btn-signup">Sign Up</button>
         </a>
 
-        <h3 className="title-landing">Tara Builders</h3>
+        <h3 className="title-landing">Innovay Construction</h3>
         <h3 className="title-para">
           We{" "}
           <Typical

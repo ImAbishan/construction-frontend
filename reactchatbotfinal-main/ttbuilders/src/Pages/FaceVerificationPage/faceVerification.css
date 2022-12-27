@@ -30,7 +30,7 @@
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: #8b5e34;
+    background: #50b6e6;
     width: 100%;
     border: 0;
     padding: 15px;
@@ -43,7 +43,7 @@
 .form-verification button:hover,
 .form-verification button:active,
 .form-verification button:focus {
-    background: #8b5e34;
+    background: #50b6e6;
 }
 .form-verification .message {
     margin: 15px 0 0;
@@ -51,7 +51,7 @@
     font-size: 12px;
 }
 .form-verification .message a {
-    color: #8b5e34;
+    color: #50b6e6;
     text-decoration: none;
 }
 .form-verification .register-form {

@@ -5,15 +5,17 @@ import { getStorage } from "firebase/storage"
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA-z3LqD0FJ40jCjjLSRNI1P6ElAs8A4ow",
-    authDomain: "tt-builders-auth.firebaseapp.com",
-    projectId: "tt-builders-auth",
-    storageBucket: "tt-builders-auth.appspot.com",
-    messagingSenderId: "90421162718",
-    appId: "1:90421162718:web:d6a229be4e148193ed484f"
+    apiKey: "AIzaSyA7EZfcmoGZy7xNQgb8d9ruxec92Ph4U0w",
+    authDomain: "innovay-construction.firebaseapp.com",
+    projectId: "innovay-construction",
+    storageBucket: "innovay-construction.appspot.com",
+    messagingSenderId: "1094926220251",
+    appId: "1:1094926220251:web:bf4d6d7bd79a13a57985fe",
+    measurementId: "G-VXGWSFL1FQ"
 };
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 export const auth = getAuth(app);
+
